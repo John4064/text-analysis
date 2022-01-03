@@ -18,11 +18,11 @@ jobs:
     - name: Run a one-line script
       run: echo Branch is Checked Out!
       
-    #- name: configure
-    #  run: ./configure
+    - name: configure
+      run: ./configure
     
     - name: make
-      run: make -f CMakeLists.txt
+      run: make
     
     - name: make check
       run: make check
