@@ -27,7 +27,8 @@ jobs:
     - name: Build Solution (windows)
       run: |
         cd build
-
+        g++ ../Source/main.cpp -o main
+        ./main
     - name: Clean Up
       run: |
         rm build
