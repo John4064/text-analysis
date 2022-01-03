@@ -24,14 +24,13 @@ jobs:
         mkdir build
         cd build
         cmake ..
-        cd CMakeFiles
         ls
 
     - name: Build Solution (windows)
       run: |
         cd build
         ls
-        make -f makefile.txt
+        make -f CMakeCache.txt
     - name: Execute Solution
       run: |
         echo EXECUTE ORDER 66
