@@ -23,14 +23,14 @@ jobs:
         cd ${{ github.workspace }}
         mkdir build
         cd build
-        cmake ..
+        cmake ../source/
         ls
 
     - name: Build Solution (windows)
       run: |
         cd build
         ls
-        make -f CMakeCache.txt
+        make
     - name: Execute Solution
       run: |
         echo EXECUTE ORDER 66
