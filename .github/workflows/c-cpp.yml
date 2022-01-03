@@ -17,23 +17,16 @@ jobs:
     #After Checked out
     - name: Run a one-line script
       run: echo Branch is Checked Out!
-#cmake ../source/
-
-    - name: Running cmake (windows)
+    #Build it with g++
+    - name: Building with G++
       run: |
         cd ${{ github.workspace }}
         mkdir build
         cd build
         g++ ../Source/main.cpp -o main
-#make
-    - name: Build Solution (windows)
-      run: |
-        cd build
-        ./main ../inputs/sun.txt
+    #Run the executable with default input
     - name: Execute Solution
       run: |
         echo EXECUTE ORDER 66
-
-    - name: Clean Up
-      run: |
-        rm build
+        cd build
+        ./main ../inputs/sun.txt
