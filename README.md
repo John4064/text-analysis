@@ -33,7 +33,7 @@
     <img src="images/logo.jpg" alt="Logo" width="160" height="160">
   </a>
 
-<h3 align="center">Algorithmic Trading Bot</h3>
+<h3 align="center">Text Analysis of books using C++</h3>
 
   <p align-items="center">
     An algoirthmic trading bot utilizing Alpaca Trade API to take the human factor out of trading
