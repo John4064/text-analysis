@@ -28,6 +28,7 @@ jobs:
 
     - name: Build Solution (windows)
       run: |
+        cd build
         ls
         make -f makefile.txt
     - name: Execute Solution
