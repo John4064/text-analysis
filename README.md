@@ -234,7 +234,7 @@ Project Link: [https://github.com/John4064/text-analysis](https://github.com/Joh
 [issues-shield]: https://img.shields.io/github/issues/John4064/text-analysis.svg?style=for-the-badge
 [issues-url]: https://github.com/John4064/text-analysis/issues
 [license-shield]: https://img.shields.io/github/license/John4064/text-analysis.svg?style=for-the-badge
-[license-url]: https://github.com/John4064/text-analysis/blob/main/license
+[license-url]: https://github.com/John4064/text-analysis/blob/main/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/john-parkhurst-722a62146/
 [product-screenshot]: images/screenshot.png
