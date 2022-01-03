@@ -24,9 +24,11 @@ jobs:
         mkdir build
         cd build
         cmake ..
+        ls
 
     - name: Build Solution (windows)
       run: |
+        ls
         make -f makefile.txt
     - name: Execute Solution
       run: |
