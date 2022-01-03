@@ -18,14 +18,16 @@ jobs:
     - name: Run a one-line script
       run: echo Branch is Checked Out!
       
-    - name: configure
-      run: ./configure
-    
-    - name: make
-      run: make
-    
-    - name: make check
-      run: make check
-    
-    - name: make distcheck
-      run: make distcheck
+    - name: Running cmake (windows)
+      run: |
+        cd ${{ github.workspace }}
+        mkdir build
+        cd build
+    #MSBuild.exe CMakeHelloWorld.sln
+    - name: Build Solution (windows)
+      run: |
+        cd build
+
+    - name: Clean Up
+      run: |
+        rm build
