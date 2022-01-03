@@ -23,12 +23,16 @@ jobs:
         cd ${{ github.workspace }}
         mkdir build
         cd build
-    #MSBuild.exe CMakeHelloWorld.sln
+        cmake ..
+
     - name: Build Solution (windows)
       run: |
         cd build
-        g++ ../Source/main.cpp -o main
-        ./main
+        make
+    - name: Execute Solution
+      run: |
+        echo EXECUTE ORDER 66
+
     - name: Clean Up
       run: |
         rm build
