@@ -27,7 +27,6 @@ jobs:
 
     - name: Build Solution (windows)
       run: |
-        cd build
         make
     - name: Execute Solution
       run: |
