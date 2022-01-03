@@ -44,3 +44,6 @@ CTestTestfile.cmake
 _deps
 #idea
 .idea/workspace.xml
+.idea/misc.xml
+*.xml
+.vscode/launch.json
