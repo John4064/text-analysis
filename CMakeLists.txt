@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.20)
+project(textanal)
+
+set(CMAKE_CXX_STANDARD 11)
+
+add_executable(textanal source/main.cpp)

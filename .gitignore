@@ -65,3 +65,5 @@ source/cmake-build-debug/.ninja_log
 source/cmake-build-debug/build.ninja
 source/cmake-build-debug/CMakeFiles/clion-log.txt
 source/cmake-build-debug/Testing/Temporary/LastTest.log
+.idea/text-analysis.iml
+.idea/.name

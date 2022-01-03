@@ -9,6 +9,7 @@ int main(int argc, char *argv[]) {
     //Input Handling
     #if multithread
         std::cout << "This Version is multithreaded \n";
+        exit(59);
     #endif
     //Check that argv[1] contains text file
     if (regex_search (argv[1], std::regex("inputs") )){
@@ -16,7 +17,6 @@ int main(int argc, char *argv[]) {
     }else{
         std::cout << argv[1] << " NO MATCH FOUND FOR REGEX\n";
     }
-
 
     return 0;
 }
