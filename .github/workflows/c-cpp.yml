@@ -27,7 +27,7 @@ jobs:
 
     - name: Build Solution (windows)
       run: |
-        make
+        make -f makefile.txt
     - name: Execute Solution
       run: |
         echo EXECUTE ORDER 66
