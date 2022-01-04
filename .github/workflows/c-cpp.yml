@@ -23,7 +23,7 @@ jobs:
         cd ${{ github.workspace }}
         mkdir build
         cd build
-        g++ ../Source/main.cpp -o main
+        g++ ../Source/main.cpp ../Source/filep.cpp -o main
     #Run the executable with default input
     - name: Execute Solution
       run: |
