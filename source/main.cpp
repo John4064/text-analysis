@@ -8,7 +8,7 @@
 #include "computation.h"
 
 
-#define numThread 1
+#define numThread 4
 
 
 int main(int argc, char *argv[]) {

@@ -8,6 +8,7 @@
 #include <vector>
 #include <string>
 #include <pthread.h>
+#include <thread>
 #include <iostream>
 
 
@@ -18,7 +19,7 @@
  */
 void gatherStat(std::vector<std::string>bookVec,int numOfThread);
 
-void task(std::vector<std::string>bookVec);
+void *task(void *threadid);
 
 void outputReport();
 #endif //TEXTANAL_COMPUTATION_H
