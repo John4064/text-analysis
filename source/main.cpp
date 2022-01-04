@@ -1,20 +1,14 @@
-#include <thread>
+
 #include <iostream>
 #include <string>
 #include <regex>
 #include <vector>
+#include <chrono>
 #include "filep.h"
+#include "computation.h"
 
 
-#define multithread	0
-
-#if multithread
-    void test(int a){
-        std::cout<< a;
-    }
-#endif
-//
-
+#define numThread 1
 
 
 int main(int argc, char *argv[]) {
@@ -36,7 +30,13 @@ int main(int argc, char *argv[]) {
     std::cout << "RUN PARALLEL PROCESSES!\n";
     //The beginning Step you may say! It opens and reads the book
     std::vector<std::string> bookVec =processFil(argv[1]);
-    
+    //Here we gather the Statistics
+    auto start = std::chrono::high_resolution_clock::now();
 
+    gatherStat(bookVec,numThread);
+
+    auto stop = std::chrono::high_resolution_clock::now();
+    auto duration = std::chrono::duration_cast<std::chrono::microseconds>(stop - start);
+    std::cout << "The Execution Time for "<<numThread<<" threads was "<< duration.count()*.000001 << " Seconds"<<std::endl;
     return 0;
 }

@@ -61,6 +61,12 @@ build CMakeFiles/textanal.dir/source/filep.cpp.obj: CXX_COMPILER__textanal_Debug
   OBJECT_DIR = CMakeFiles\textanal.dir
   OBJECT_FILE_DIR = CMakeFiles\textanal.dir\source
 
+build CMakeFiles/textanal.dir/source/computation.cpp.obj: CXX_COMPILER__textanal_Debug D$:/Workspace/C++/textanal/source/computation.cpp || cmake_object_order_depends_target_textanal
+  DEP_FILE = CMakeFiles\textanal.dir\source\computation.cpp.obj.d
+  FLAGS = -g -std=gnu++11
+  OBJECT_DIR = CMakeFiles\textanal.dir
+  OBJECT_FILE_DIR = CMakeFiles\textanal.dir\source
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target textanal
@@ -69,7 +75,7 @@ build CMakeFiles/textanal.dir/source/filep.cpp.obj: CXX_COMPILER__textanal_Debug
 #############################################
 # Link the executable textanal.exe
 
-build textanal.exe: CXX_EXECUTABLE_LINKER__textanal_Debug CMakeFiles/textanal.dir/source/main.cpp.obj CMakeFiles/textanal.dir/source/filep.cpp.obj
+build textanal.exe: CXX_EXECUTABLE_LINKER__textanal_Debug CMakeFiles/textanal.dir/source/main.cpp.obj CMakeFiles/textanal.dir/source/filep.cpp.obj CMakeFiles/textanal.dir/source/computation.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\textanal.dir
