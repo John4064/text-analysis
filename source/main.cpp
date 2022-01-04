@@ -1,8 +1,8 @@
-#include <iostream>
 #include <thread>
+#include <iostream>
 #include <string>
 #include <regex>
-#include <fstream>
+#include <vector>
 #include "filep.h"
 
 
@@ -15,29 +15,7 @@
 #endif
 //
 
-void processFil(const char* argv){
-    /**@param: The File name argument we recieved from CLI
-     * @brief: We open and read the File
-     *
-     * @return: Nothing
-     */
-    //Open the File specified
-    std::string filename = "../inputs/sun.txt";
-    FILE* fil = openF(argv);
-    //Read the File
-    char buffer [255];
-    while (!feof (fil) )
-    {
-        if ( fgets (buffer , 255 , fil) == NULL ) {
-            break;
-        }
-        fputs (buffer , stdout);
-    }
-    //Cleanup
-    std::cout << "REACHED!\n";
-    fclose(fil);
-    return;
-}
+
 
 int main(int argc, char *argv[]) {
     //Correct amt of arguments
@@ -55,9 +33,10 @@ int main(int argc, char *argv[]) {
         std::cout << "This Version is multithreaded \n";
         exit(59);
     #endif
-    std::cout << "RUN PARRALEL PROCESSES!\n";
-    //The beginning Step you may say!
-    processFil(argv[1]);
+    std::cout << "RUN PARALLEL PROCESSES!\n";
+    //The beginning Step you may say! It opens and reads the book
+    std::vector<std::string> bookVec =processFil(argv[1]);
+    
 
     return 0;
 }
