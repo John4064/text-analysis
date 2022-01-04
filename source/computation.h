@@ -11,11 +11,14 @@
 #include <thread>
 #include <iostream>
 
-
+struct pair{
+    unsigned int index, numOfThread;
+    std::vector<std::string>* bookP;
+};
 
 /**
  * @param: The book saved as a vector of strings, numThread is the number of threads to be created
- * @brief: This will iterate through based on the number of threads and gather a bunch of statistics
+ * @brief: This is the "main function" creates all the other threads based on the number given
  */
 void gatherStat(std::vector<std::string>bookVec,int numOfThread);
 

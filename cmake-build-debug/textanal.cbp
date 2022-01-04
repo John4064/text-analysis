@@ -80,6 +80,18 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/john4064/Desktop/Workspace/C++/text-analysis/source/computation.cpp">
+			<Option target="textanal"/>
+		</Unit>
+		<Unit filename="/Users/john4064/Desktop/Workspace/C++/text-analysis/source/computation.h">
+			<Option target="textanal"/>
+		</Unit>
+		<Unit filename="/Users/john4064/Desktop/Workspace/C++/text-analysis/source/filep.cpp">
+			<Option target="textanal"/>
+		</Unit>
+		<Unit filename="/Users/john4064/Desktop/Workspace/C++/text-analysis/source/filep.h">
+			<Option target="textanal"/>
+		</Unit>
 		<Unit filename="/Users/john4064/Desktop/Workspace/C++/text-analysis/source/main.cpp">
 			<Option target="textanal"/>
 		</Unit>
