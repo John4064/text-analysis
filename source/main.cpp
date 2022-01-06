@@ -37,6 +37,7 @@ int main(int argc, char *argv[]) {
 
     auto stop = std::chrono::high_resolution_clock::now();
     auto duration = std::chrono::duration_cast<std::chrono::microseconds>(stop - start);
+    //In the report we output  Thread # and time efficiency
     std::cout << "The Execution Time for "<<numThread<<" threads was "<< duration.count()*.000001 << " Seconds"<<std::endl;
     return 0;
 }

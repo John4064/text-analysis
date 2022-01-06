@@ -10,22 +10,24 @@ void gatherStat(std::vector<std::string>bookVec,int numOfThread){
     pthread_t threads[numOfThread];
     int rc;
     struct inputStruct thrStruct[numOfThread];
+    std::map<std::string,float>* foo;
     for(unsigned int i = 0; i < numOfThread; i++ ) {
         //FIlling the inputstruct with the values
         thrStruct[i].index = i;
         thrStruct[i].numOfThread = numOfThread;
-
+        thrStruct[i].test = foo;
         thrStruct[i].bookP = &bookVec;
         rc = pthread_create(&threads[i], NULL, task, &thrStruct[i]);
         if (rc) {
             std::cout << "Error:unable to create thread," << rc << std::endl;
             exit(-1);
         }
-        //Optional may not need next line
+        //This function below waits for the thread to exit before it continues
         pthread_join(threads[i], NULL);
     }
     //This exists the main threads
     //pthread_exit(nullptr);
+    //std::cout << foo[1] <<std::endl;
     return;
 }
 
@@ -38,10 +40,12 @@ void *task(void *rec_struct) {
     //The start index of the pages to analyze
     unsigned int startInd = size*ind;
     //Magic Happens Here
-
-
-
-    std::cout << size<<std::endl;
+    //struct_ptr->test[1] = startInd;
+    std::map<std::string, float> *mymap = struct_ptr->test;
+    //mymap['a']="another";
+    std::string tanner = "as";
+    mymap->insert (std::pair<std::string,float>('zad',200));
+    //std::cout << size<<std::endl;
     pthread_exit(nullptr);
     void *p;
     return p;

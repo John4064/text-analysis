@@ -11,9 +11,11 @@
 #include <thread>
 #include <iostream>
 #include <mutex>
+#include <map>
 
 struct inputStruct{
     unsigned int index, numOfThread;
+    std::map<std::string, float> *test;
     std::vector<std::string>* bookP;
 };
 
