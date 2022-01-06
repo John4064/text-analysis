@@ -24,7 +24,7 @@ struct inputStruct{
 void gatherStat(std::vector<std::string>bookVec,int numOfThread);
 
 /**
- * @param threadid This is the pair structure above
+ * @param threadid This is the inputStruct above it contains index of thread, numofthreads that exist and the book
  * @brief Description
  * @return
  */
