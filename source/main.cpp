@@ -13,7 +13,7 @@
 
 int main(int argc, char *argv[]) {
     //Correct amt of arguments
-    if (argc == 3) {
+    if (argc != 2) {
         std::cout << ("error: missing command line arguments\n");
         exit(41);
     }

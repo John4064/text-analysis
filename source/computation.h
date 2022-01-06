@@ -10,8 +10,9 @@
 #include <pthread.h>
 #include <thread>
 #include <iostream>
+#include <mutex>
 
-struct pair{
+struct inputStruct{
     unsigned int index, numOfThread;
     std::vector<std::string>* bookP;
 };
@@ -22,6 +23,11 @@ struct pair{
  */
 void gatherStat(std::vector<std::string>bookVec,int numOfThread);
 
+/**
+ * @param threadid This is the pair structure above
+ * @brief Description
+ * @return
+ */
 void *task(void *threadid);
 
 void outputReport();
