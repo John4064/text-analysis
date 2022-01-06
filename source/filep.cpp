@@ -28,6 +28,12 @@ std::vector<std::string> processFil(const char* argv){
             bookVec.push_back(buffer);
         }
     }
+    //CHECK SIZE OF BOOK If not an even number Add another blank line for proper calculations
+    int remain = bookVec.size()%2;
+    if(remain != 0){
+        bookVec.push_back(" ");
+    }
+
     //cleanup
     fil.close();
     return bookVec;

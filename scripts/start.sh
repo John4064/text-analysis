@@ -1,4 +1,4 @@
 #John Parkhurst
-echo "TANNER"
-g++ ../source/main.cpp -o test
-#./test
+echo "Start:"
+g++ ../source/main.cpp ../source/computation.cpp ../source/filep.cpp -o test
+./test ../inputs/sun.txt

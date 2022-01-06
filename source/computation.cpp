@@ -30,12 +30,18 @@ void gatherStat(std::vector<std::string>bookVec,int numOfThread){
 
 void *task(void *rec_struct) {
 
-    struct pair *struct_ptr = (struct pair*) rec_struct;
+    auto *struct_ptr = (struct pair*) rec_struct;
+    //How large the thread processes ex 4 threads of 100 lines do 25 each
     unsigned int size =struct_ptr->bookP->size()/struct_ptr->numOfThread;
     unsigned int ind = struct_ptr->index;
-    std::cout << (ind*size)<< " The first index is\n";
-    std::cout << struct_ptr->bookP->size()<< '\n';
-    pthread_exit(NULL);
+    //The start index of the pages to analyze
+    unsigned int startInd = size*ind;
+    //Magic Happens Here
+
+
+
+
+    pthread_exit(nullptr);
     void *p;
     return p;
 }
