@@ -36,7 +36,7 @@
 <h3 align="center">Text Analysis of books using C++</h3>
 
   <p align-items="center">
-    An algoirthmic trading bot utilizing Alpaca Trade API to take the human factor out of trading
+    A text analysis application that processes the text file of books gathered with XPDFREADER to do analysis on.
     <br />
     <a href="https://github.com/John4064/text-analysis/"><strong>Explore the docs »</strong></a>
     <br />
