@@ -93,8 +93,8 @@
 
 ### Built With
 
-* [Alpaca Trade API](https://alpaca.markets/)
-* [Python 3](https://www.python.org/)
+* [XPDFREADER](https://www.xpdfreader.com/)
+* [C++11](https://www.cplusplus.com/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -107,16 +107,9 @@ This is an example of how you may give instructions on setting up your project l
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
- - Python 3
+ - C++11
 ### Dependencies
- - Alpaca Trade API
- - Colorama
- - Numpy
- - Pandas
- - Requests
- - Lxml
- - Bs4
- - Datetime
+ - Standard Library
 ### Installation
 
 1. Get a free API Key at [https://alpaca.markets/](https://alpaca.markets/)
@@ -216,8 +209,8 @@ Project Link: [https://github.com/John4064/text-analysis](https://github.com/Joh
 ## Acknowledgments
 
 * [Readme Template](https://github.com/othneildrew/Best-README-Template)
-* [Investopedia](https://www.investopedia.com/)
-* [AlgoTrading101](https://algotrading101.com)
+* [XPDFREADER](https://www.xpdfreader.com/)
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
