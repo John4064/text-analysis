@@ -83,9 +83,9 @@
 ## About The Project
 
 <a href="https://app.alpaca.markets/dashboard/overview">
-    <img src="images/examples/portfolio.png" alt="Logo" width="600" height="400">
+    <!--<img src="images/examples/portfolio.png" alt="Logo" width="600" height="400"> -->
   </a>
-<p>As of right now a command line interface that manages the portfolio itself. Successfully communicates with the API to execute said trades which can be viewed using the alpaca markets dashboard. </p>
+<p>Version one the application will take in a text file that is supplied in the inputs folder, from there it will execute the algorithm to scan and process the textfile using multithreading and output to an output folder as well as efficiency statistics. With the change in the number of threads you can get statistics on the efficiency of # of threads</p>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -112,25 +112,7 @@ To get a local copy up and running follow these simple example steps.
  - Standard Library
 ### Installation
 
-1. Get a free API Key at [https://alpaca.markets/](https://alpaca.markets/)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/John4064/text-analysis.git
-   ```
-3. Install Dependencies
-   ```sh
-   pip install "X"
-   ```
-4. Enter your API Keys in `config.py`
-   ```py
-   API_KEY = 'ENTER YOUR API'
-   API_SECRET = 'ENTER YOUR API'
-   ```
-   or for test API
-   ```py
-   TESTAPI_KEY = 'ENTER YOUR API'
-   TESTAPI_SECRET = 'ENTER YOUR API'
-   ```
+1. Upon Version 1's completion need to update installation guide. As of right now git clone and branch off to work on it!
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
