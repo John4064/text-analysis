@@ -43,8 +43,8 @@ void *task(void *rec_struct) {
     //struct_ptr->test[1] = startInd;
     std::map<std::string, float> *mymap = struct_ptr->test;
     //mymap['a']="another";
-    std::string tanner = "as";
-    mymap->insert (std::pair<std::string,float>('zad',200));
+    //THIS IS HOW WE INSERT THE VALUES INTO OUR MAP
+    mymap->insert (std::make_pair("a",3));
     //std::cout << size<<std::endl;
     pthread_exit(nullptr);
     void *p;
