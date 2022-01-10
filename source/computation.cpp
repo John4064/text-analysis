@@ -10,7 +10,7 @@ void gatherStat(std::vector<std::string>bookVec,int numOfThread){
     pthread_t threads[numOfThread];
     int rc;
     struct inputStruct thrStruct[numOfThread];
-    std::map<std::string,float>* foo;
+    std::map<std::string, int>* foo;
     for(unsigned int i = 0; i < numOfThread; i++ ) {
         //FIlling the inputstruct with the values
         thrStruct[i].index = i;
@@ -27,7 +27,6 @@ void gatherStat(std::vector<std::string>bookVec,int numOfThread){
     }
     //This exists the main threads
     //pthread_exit(nullptr);
-    //std::cout << foo[1] <<std::endl;
     return;
 }
 
@@ -39,13 +38,34 @@ void *task(void *rec_struct) {
     unsigned int ind = struct_ptr->index;
     //The start index of the pages to analyze
     unsigned int startInd = size*ind;
-    //Magic Happens Here
-    //struct_ptr->test[1] = startInd;
-    std::map<std::string, float> *mymap = struct_ptr->test;
-    //mymap['a']="another";
-    //THIS IS HOW WE INSERT THE VALUES INTO OUR MAP
-    mymap->insert (std::make_pair("a",3));
-    //std::cout << size<<std::endl;
+    std::vector<std::string> bookVec = *struct_ptr->bookP;
+    std::map<std::string, int> *mymap = struct_ptr->test;
+    //Plan of attack
+    //Itemize all the words
+    for(int i =startInd; i < startInd+size; i++){
+        //We split each string by space then put into vector based on frequency
+        //This is the string stream of our line
+        std::stringstream ss(bookVec[i]);
+        //Each individual word
+        std::string inWord;
+        while (ss >> inWord) {
+
+            if(mymap->find(inWord) != mymap->end()){
+                //UPDATE MYMAP
+
+            }else{
+                //Not in the map
+                //THIS IS HOW WE INSERT THE VALUES INTO OUR MAP
+                mymap->insert (std::make_pair(inWord,1));
+            }
+        }
+    }
+    //Print thru our map to check
+    if(ind==3){
+        for (const auto & [key, value] : *mymap) {
+            std::cout << key << " : " << value << std::endl;
+        }
+    }
     pthread_exit(nullptr);
     void *p;
     return p;

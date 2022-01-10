@@ -12,12 +12,14 @@
 #include <iostream>
 #include <mutex>
 #include <map>
+#include <bits/stdc++.h>
 
 struct inputStruct{
     unsigned int index, numOfThread;
-    std::map<std::string, float> *test;
+    std::map<std::string, int> *test;
     std::vector<std::string>* bookP;
 };
+
 
 /**
  * @param: The book saved as a vector of strings, numThread is the number of threads to be created
