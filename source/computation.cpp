@@ -2,6 +2,7 @@
 // Created by jpark on 1/3/2022.
 //
 
+
 #include "computation.h"
 
 
@@ -40,6 +41,8 @@ void *task(void *rec_struct) {
     unsigned int startInd = size*ind;
     std::vector<std::string> bookVec = *struct_ptr->bookP;
     std::map<std::string, int> *mymap = struct_ptr->test;
+    //Testing idea
+    std::map<std::string, int> &testmap = *mymap;
     //Plan of attack
     //Itemize all the words
     for(int i =startInd; i < startInd+size; i++){
@@ -50,25 +53,35 @@ void *task(void *rec_struct) {
         std::string inWord;
         while (ss >> inWord) {
 
+            if(testmap.size()==0) {
+                printf("TANNER\n");
+                testmap.insert(std::make_pair(inWord, 1));
+            }
+            //std::cout << 5;
+            /*
             if(mymap->find(inWord) != mymap->end()){
                 //UPDATE MYMAP
-
+                std::cout << 5;
+                //itr->second +=1;
             }else{
                 //Not in the map
                 //THIS IS HOW WE INSERT THE VALUES INTO OUR MAP
-                mymap->insert (std::make_pair(inWord,1));
+                std::cout <<6;
+                //mymap->insert (std::make_pair(inWord,1));
             }
+            */
+
         }
     }
     //Print thru our map to check
+    pthread_exit(nullptr);
     if(ind==3){
         for (const auto & [key, value] : *mymap) {
             std::cout << key << " : " << value << std::endl;
         }
     }
+
     pthread_exit(nullptr);
-    void *p;
-    return p;
 }
 
 void outputReport(){

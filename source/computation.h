@@ -12,7 +12,8 @@
 #include <iostream>
 #include <mutex>
 #include <map>
-#include <bits/stdc++.h>
+#include <sstream>
+//#include <bits/stdc++.h>
 
 struct inputStruct{
     unsigned int index, numOfThread;
