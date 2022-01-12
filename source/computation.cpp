@@ -41,36 +41,31 @@ void *task(void *rec_struct) {
     unsigned int startInd = size*ind;
     std::vector<std::string> bookVec = *struct_ptr->bookP;
     std::map<std::string, int> mymap = *struct_ptr->test;
-    //Testing idea
-    //Plan of attack
-    //Itemize all the words
+    //Iterate through our subsection!
     for(int i =startInd; i < startInd+size; i++){
         //We split each string by space then put into vector based on frequency
         //This is the string stream of our line
         std::stringstream ss(bookVec[i]);
         //Each individual word
         std::string inWord;
-        while (ss >> inWord) {
-            std::map<std::string, int>::iterator it = mymap.find("A");
+
+        while (ss>> inWord) {
+            std::map<std::string, int>::iterator it = mymap.find(inWord);
             if(it != mymap.end()) {
                 //Update
-                it->second += 1;
+                it->second = it->second+1;
             }else{
                 //Doesnt Exist so insert into map
                 mymap.insert(std::make_pair(inWord,1));
             }
-            //mymap
-            //mymap.insert(std::make_pair("a",4));
-
         }
     }
     //Print thru our map to check
-    pthread_exit(nullptr);
-
+    std::cout << "THIS MAP IS FOR THREAD: "<< ind << std::endl;
     for (const auto [key, value] : mymap) {
         std::cout << key << " : " << value << std::endl;
     }
-
+    pthread_exit(nullptr);
 }
 
 void outputReport(){

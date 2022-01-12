@@ -30,7 +30,8 @@ void gatherStat(std::vector<std::string>bookVec,int numOfThread);
 
 /**
  * @param threadid This is the inputStruct above it contains index of thread, numofthreads that exist and the book
- * @brief Description
+ * @brief The brains behind the application: Iterates through its subsection of book depending on #threads,
+ * And from there it itemizes each element in the book into a map.
  * @return
  */
 void *task(void *threadid);
