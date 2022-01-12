@@ -40,9 +40,8 @@ void *task(void *rec_struct) {
     //The start index of the pages to analyze
     unsigned int startInd = size*ind;
     std::vector<std::string> bookVec = *struct_ptr->bookP;
-    std::map<std::string, int> *mymap = struct_ptr->test;
+    std::map<std::string, int> mymap = *struct_ptr->test;
     //Testing idea
-    std::map<std::string, int> testmap;
     //Plan of attack
     //Itemize all the words
     for(int i =startInd; i < startInd+size; i++){
@@ -52,40 +51,26 @@ void *task(void *rec_struct) {
         //Each individual word
         std::string inWord;
         while (ss >> inWord) {
-
-            if(0) {
-                std::cout <<("TANNER\n");
-                testmap.insert(std::make_pair(inWord, 1));
-            }
-            testmap["a"]=101;
-            testmap["b"]=202;
-            testmap["c"]=302;
-            testmap.insert(std::make_pair("a",4));
-            
-            /*
-            if(mymap->find(inWord) != mymap->end()){
-                //UPDATE MYMAP
-                std::cout << 5;
-                //itr->second +=1;
+            std::map<std::string, int>::iterator it = mymap.find("A");
+            if(it != mymap.end()) {
+                //Update
+                it->second += 1;
             }else{
-                //Not in the map
-                //THIS IS HOW WE INSERT THE VALUES INTO OUR MAP
-                std::cout <<6;
-                //mymap->insert (std::make_pair(inWord,1));
+                //Doesnt Exist so insert into map
+                mymap.insert(std::make_pair(inWord,1));
             }
-            */
+            //mymap
+            //mymap.insert(std::make_pair("a",4));
 
         }
     }
     //Print thru our map to check
     pthread_exit(nullptr);
-    if(ind==3){
-        for (const auto & [key, value] : *mymap) {
-            std::cout << key << " : " << value << std::endl;
-        }
+
+    for (const auto [key, value] : mymap) {
+        std::cout << key << " : " << value << std::endl;
     }
 
-    pthread_exit(nullptr);
 }
 
 void outputReport(){
