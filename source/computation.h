@@ -13,7 +13,7 @@
 #include <mutex>
 #include <map>
 #include <sstream>
-//#include <bits/stdc++.h>
+#include <algorithm>
 
 struct inputStruct{
     unsigned int index, numOfThread;
@@ -21,6 +21,13 @@ struct inputStruct{
     std::vector<std::string>* bookP;
 };
 
+/**
+ * @param str This is the string we are modifying
+ * @param bad is the character we would like the remove
+ * @brief  Function to remove all occurrences of a char from the string
+ * @return the Modified string
+ */
+std::string removeChar(std::string str, char bad);
 
 /**
  * @param: The book saved as a vector of strings, numThread is the number of threads to be created
@@ -37,4 +44,10 @@ void gatherStat(std::vector<std::string>bookVec,int numOfThread);
 void *task(void *threadid);
 
 void outputReport();
+/**
+ * @param inWord is a string we want to clean up
+ * @brief just a garbage cleanup method that removes punctuation and other stuff from the word
+ * @return The modified stream
+ */
+std::string cleanup(std::string inWord);
 #endif //TEXTANAL_COMPUTATION_H

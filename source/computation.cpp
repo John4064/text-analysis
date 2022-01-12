@@ -30,7 +30,15 @@ void gatherStat(std::vector<std::string>bookVec,int numOfThread){
     //pthread_exit(nullptr);
     return;
 }
-
+std::string cleanup(std::string inWord){
+    inWord=removeChar(inWord,'.');
+    inWord=removeChar(inWord,',');
+    inWord=removeChar(inWord,'"');
+    inWord=removeChar(inWord,'?');
+    inWord=removeChar(inWord,';');
+    inWord=removeChar(inWord,'!');
+    return inWord;
+}
 void *task(void *rec_struct) {
 
     auto *struct_ptr = (struct inputStruct*) rec_struct;
@@ -50,6 +58,12 @@ void *task(void *rec_struct) {
         std::string inWord;
 
         while (ss>> inWord) {
+            //Preprocess inword For punctuation
+            inWord=cleanup(inWord);
+            if(inWord.empty()){
+                //Skips just empty periods
+                continue;
+            }
             std::map<std::string, int>::iterator it = mymap.find(inWord);
             if(it != mymap.end()) {
                 //Update
@@ -65,7 +79,14 @@ void *task(void *rec_struct) {
     for (const auto [key, value] : mymap) {
         std::cout << key << " : " << value << std::endl;
     }
+    //Without this print it goes roughly .009 seconds for 4 threads
     pthread_exit(nullptr);
+    return nullptr;
+}
+
+std::string removeChar(std::string str, char bad){
+    str.erase(remove(str.begin(),str.end(),bad),str.end());
+    return str;
 }
 
 void outputReport(){
