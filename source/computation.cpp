@@ -37,6 +37,11 @@ std::string cleanup(std::string inWord){
     inWord=removeChar(inWord,'?');
     inWord=removeChar(inWord,';');
     inWord=removeChar(inWord,'!');
+    inWord=removeChar(inWord,'(');
+    inWord=removeChar(inWord,')');
+    inWord=removeChar(inWord,'--');
+    inWord=removeChar(inWord,':');
+    //May remove numbers not sure.
     return inWord;
 }
 void *task(void *rec_struct) {
