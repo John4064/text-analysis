@@ -42,7 +42,7 @@ void *task(void *rec_struct) {
     std::vector<std::string> bookVec = *struct_ptr->bookP;
     std::map<std::string, int> *mymap = struct_ptr->test;
     //Testing idea
-    std::map<std::string, int> &testmap = *mymap;
+    std::map<std::string, int> testmap;
     //Plan of attack
     //Itemize all the words
     for(int i =startInd; i < startInd+size; i++){
@@ -53,11 +53,15 @@ void *task(void *rec_struct) {
         std::string inWord;
         while (ss >> inWord) {
 
-            if(testmap.size()==0) {
-                printf("TANNER\n");
+            if(0) {
+                std::cout <<("TANNER\n");
                 testmap.insert(std::make_pair(inWord, 1));
             }
-            //std::cout << 5;
+            testmap["a"]=101;
+            testmap["b"]=202;
+            testmap["c"]=302;
+            testmap.insert(std::make_pair("a",4));
+            
             /*
             if(mymap->find(inWord) != mymap->end()){
                 //UPDATE MYMAP
