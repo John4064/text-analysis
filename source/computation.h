@@ -15,10 +15,13 @@
 #include <sstream>
 #include <algorithm>
 
+//extern std::vector<std::pair<std::string, int>*> wordL;
+extern std::vector<std::string*>* wordL;
+
 struct inputStruct{
     unsigned int index, numOfThread;
-    std::map<std::string, int> *test;
     std::vector<std::string>* bookP;
+    int* funtime;
 };
 
 /**
