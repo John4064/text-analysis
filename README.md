@@ -132,16 +132,16 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-- [X] Basic Functionality
+- [] Basic Functionality
 - [] Documentation
     - [X] Readme
-    - [] Refactoring file directory
+    - [] Doxygen
 - [] User Interface
-    - [] Interactibility with the application without programming
-- [] Indicators
-    - [] RSI Indicator
-    - [] Bollinger Bands
-    - [] On-Balance Volume Indicator
+    - [] Interactibility with the application without programming selecting files
+- [] Report
+    - [] Word Count/Frequency
+    - [] Sentiment Analysis
+    - [] General Stats
 
 See the [open issues](https://github.com/John4064/text-analysis/issues) for a full list of proposed features (and known issues).
 
