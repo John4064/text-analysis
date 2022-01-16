@@ -60,7 +60,7 @@ void *task(void *rec_struct) {
     //Example how to modify with a basic int
     int* test = struct_ptr->funtime;
     *test+=1;
-    
+
     //std::map<std::string, int>* mymap = struct_ptr->wordL;
     //Iterate through our subsection!
     for(int i =startInd; i < startInd+size; i++){
