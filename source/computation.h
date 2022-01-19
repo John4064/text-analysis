@@ -39,7 +39,7 @@ std::string removeChar(std::string str, char bad);
  * @param: The book saved as a vector of strings, numThread is the number of threads to be created
  * @brief: This is the "main function" creates all the other threads based on the number given
  */
-void gatherStat(std::vector<std::string>bookVec,int numOfThread);
+void processText(std::vector<std::string>bookVec,int numOfThread);
 
 /**
  * @param threadid This is the inputStruct above it contains index of thread, numofthreads that exist and the book
@@ -49,7 +49,7 @@ void gatherStat(std::vector<std::string>bookVec,int numOfThread);
  */
 void *task(void *threadid);
 
-void outputReport();
+void outputReport(std::map<std::string,int> wordM);
 /**
  * @param inWord is a string we want to clean up
  * @brief just a garbage cleanup method that removes punctuation and other stuff from the word

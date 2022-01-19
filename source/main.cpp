@@ -27,13 +27,13 @@ int main(int argc, char *argv[]) {
         std::cout << "This Version is multithreaded \n";
         exit(59);
     #endif
-    std::cout << "RUN PARALLEL PROCESSES!\n";
+    std::cout << "Processing File As we Speak!\n";
     //The beginning Step you may say! It opens and reads the book
     std::vector<std::string> bookVec =processFil(argv[1]);
     //Here we gather the Statistics
     auto start = std::chrono::high_resolution_clock::now();
 
-    gatherStat(bookVec,numThread);
+    processText(bookVec,numThread);
 
     auto stop = std::chrono::high_resolution_clock::now();
     auto duration = std::chrono::duration_cast<std::chrono::microseconds>(stop - start);

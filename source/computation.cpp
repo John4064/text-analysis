@@ -9,7 +9,7 @@
 //The Mutex for writing to our wordMap
 std::mutex freqMtx;
 
-void gatherStat(std::vector<std::string>bookVec,int numOfThread){
+void processText(std::vector<std::string>bookVec,int numOfThread){
     pthread_t threads[numOfThread];
     int rc;
     struct inputStruct thrStruct[numOfThread];
@@ -31,15 +31,9 @@ void gatherStat(std::vector<std::string>bookVec,int numOfThread){
     }
     //This exits the main threads
     //pthread_exit(nullptr);
-    std::cout << "THIS MAP IS FOR MAIN THREAD: "<< std::endl;
-    for (const auto& [key, value] : *wordM) {
-        std::cout << key << " : " << value << std::endl;
-    }
     //After all the threads are complete we have wordM
-
-
-
-
+    collectStats(*wordM, bookVec);
+    //outputReport(*wordM);
     delete wordM;
 }
 
@@ -104,6 +98,9 @@ std::string removeChar(std::string str, char bad){
     return str;
 }
 
-void outputReport(){
-
+void outputReport(std::map<std::string,int> wordM){
+    std::cout << "THIS MAP IS FOR MAIN THREAD: "<< std::endl;
+    for (const auto& [key, value] : wordM) {
+        std::cout << key << " : " << value << std::endl;
+    }
 }
