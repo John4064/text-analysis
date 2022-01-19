@@ -94,7 +94,7 @@
 ### Built With
 
 * [XPDFREADER](https://www.xpdfreader.com/)
-* [C++11](https://www.cplusplus.com/)
+* [C++17](https://www.cplusplus.com/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -107,7 +107,7 @@ This is an example of how you may give instructions on setting up your project l
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
- - C++11
+ - C++17
 ### Dependencies
  - Standard Library
 ### Installation
