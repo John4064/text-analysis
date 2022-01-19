@@ -65,11 +65,8 @@ void *task(void *rec_struct) {
     //The start index of the pages to analyze
     unsigned int startInd = size*ind;
     std::vector<std::string> bookVec = *struct_ptr->bookP;
-    //Example how to modify with a basic int
-    int* test = struct_ptr->funtime;
-    *test+=1;
+    //The output vector here
     std::vector<std::pair <std::string,int>>* wordL = struct_ptr->wordFreq;
-    wordL->push_back(std::make_pair("ABC",5));
     //std::map<std::string, int>* mymap = struct_ptr->wordL;
     //Iterate through our subsection!
     for(int i =startInd; i < startInd+size; i++){
@@ -81,7 +78,7 @@ void *task(void *rec_struct) {
         while (ss>> inWord) {
             //Preprocess inword For punctuation
             inWord=cleanup(inWord);
-            //mymap->insert(std::make_pair("abc",5));
+            wordL->push_back(std::make_pair(inWord,1));
             /*
             if(inWord.empty()){
                 //Skips just empty periods
@@ -98,12 +95,6 @@ void *task(void *rec_struct) {
              */
         }
     }
-    //Made It here
-    std::cout << *test<<'\n';
-
-
-
-
     //Without this print it goes roughly .009 seconds for 4 threads
 
     pthread_exit(nullptr);
