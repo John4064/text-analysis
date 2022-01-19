@@ -4,6 +4,7 @@
 
 
 #include "computation.h"
+#include "statistics.h"
 
 //The Mutex for writing to our wordMap
 std::mutex freqMtx;
@@ -35,6 +36,10 @@ void gatherStat(std::vector<std::string>bookVec,int numOfThread){
         std::cout << key << " : " << value << std::endl;
     }
     //After all the threads are complete we have wordM
+
+
+
+
     delete wordM;
 }
 
