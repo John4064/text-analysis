@@ -1,5 +1,5 @@
 //
-// Created by jpark on 1/3/2022.
+// Created by john Parkhurst on 1/3/2022.
 //
 
 
@@ -15,12 +15,12 @@ void gatherStat(std::vector<std::string>bookVec,int numOfThread){
     //WordM is our word Frequency Map
     auto wordM = new std::map<std::string,int>;
     for(unsigned int i = 0; i < numOfThread; i++ ) {
-        //FIlling the input struct with the values desired(see struct for details)
+        //Filling the input struct with the values desired(see struct for details)
         thrStruct[i].index = i;
         thrStruct[i].numOfThread = numOfThread;
         thrStruct[i].wordMap = wordM;
         thrStruct[i].bookP = &bookVec;
-        rc = pthread_create(&threads[i], NULL, task, &thrStruct[i]);
+        rc = pthread_create(&threads[i], nullptr, task, &thrStruct[i]);
         if (rc) {
             std::cout << "Error:unable to create thread," << rc << std::endl;
             exit(-1);
@@ -64,14 +64,14 @@ void *task(void *rec_struct) {
     std::vector<std::string> bookVec = *struct_ptr->bookP;
     std::map<std::string, int>* wordL = struct_ptr->wordMap;
     //Iterate through our subsection!
-    for(int i =startInd; i < startInd+size; i++){
+    for(unsigned int i =startInd; i < startInd+size; i++){
         //We split each string by space then put into vector based on frequency
         //This is the string stream of our line
         std::stringstream ss(bookVec[i]);
         //Each individual word
         std::string inWord;
         while (ss>> inWord) {
-            //Preprocess inword For punctuation
+            //Preprocess inWord For punctuation
             inWord=cleanup(inWord);
             if(inWord.empty()){
                 //Skips just empty
