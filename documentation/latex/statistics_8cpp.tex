@@ -1,0 +1,58 @@
+\hypertarget{statistics_8cpp}{}\doxysection{D\+:/\+Workspace/\+C++/textanal/source/statistics.cpp File Reference}
+\label{statistics_8cpp}\index{D:/Workspace/C++/textanal/source/statistics.cpp@{D:/Workspace/C++/textanal/source/statistics.cpp}}
+{\ttfamily \#include \char`\"{}statistics.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{statistics_8cpp_ab3d02237194a559bd88612469731a9bc}{collect\+Stats}} (std\+::map$<$ std\+::string, int $>$ wordM, std\+::vector$<$ std\+::string $>$book\+Vec)
+\begin{DoxyCompactList}\small\item\em This function primarily is where we go and call all specific statistics such as Collocation,Concordance,classification Will must likely call an output function itself which then in turn redirects all output to logs/report. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{statistics_8cpp_ac9ac8c1aee7641aef5496c35521770e3}{word\+Frequency}} (std\+::map$<$ std\+::string, int $>$ wordM, int size)
+\begin{DoxyCompactList}\small\item\em Just output a ranking of top size words(10,20,30) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{statistics_8cpp_ab3d02237194a559bd88612469731a9bc}\label{statistics_8cpp_ab3d02237194a559bd88612469731a9bc}} 
+\index{statistics.cpp@{statistics.cpp}!collectStats@{collectStats}}
+\index{collectStats@{collectStats}!statistics.cpp@{statistics.cpp}}
+\doxysubsubsection{\texorpdfstring{collectStats()}{collectStats()}}
+{\footnotesize\ttfamily void collect\+Stats (\begin{DoxyParamCaption}\item[{std\+::map$<$ std\+::string, int $>$}]{wordM,  }\item[{std\+::vector$<$ std\+::string $>$}]{book\+Vec }\end{DoxyParamCaption})}
+
+
+
+This function primarily is where we go and call all specific statistics such as Collocation,Concordance,classification Will must likely call an output function itself which then in turn redirects all output to logs/report. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wordM} & The word map that contains all the words in the file and their frequency \\
+\hline
+{\em book\+Vec} & The book itself saved as a vector. Could be used for collocation later down the line \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Nothing at the moment 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{statistics_8cpp_source_l00008}{8}} of file \mbox{\hyperlink{statistics_8cpp_source}{statistics.\+cpp}}.
+
+\mbox{\Hypertarget{statistics_8cpp_ac9ac8c1aee7641aef5496c35521770e3}\label{statistics_8cpp_ac9ac8c1aee7641aef5496c35521770e3}} 
+\index{statistics.cpp@{statistics.cpp}!wordFrequency@{wordFrequency}}
+\index{wordFrequency@{wordFrequency}!statistics.cpp@{statistics.cpp}}
+\doxysubsubsection{\texorpdfstring{wordFrequency()}{wordFrequency()}}
+{\footnotesize\ttfamily void word\+Frequency (\begin{DoxyParamCaption}\item[{std\+::map$<$ std\+::string, int $>$}]{wordM,  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+
+
+Just output a ranking of top size words(10,20,30) 
+
+NOTE TO SELF COULD REFACTOR THIS IN FUTURE TO ACCOUNT FOR MULTI INPUT, like most frequent phrase and word 
+\begin{DoxyParams}{Parameters}
+{\em wordM} & The word map that contains all the words in the file and their frequency \\
+\hline
+{\em size} & determines how many words we display(top 10,25,50) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{statistics_8cpp_source_l00013}{13}} of file \mbox{\hyperlink{statistics_8cpp_source}{statistics.\+cpp}}.
+

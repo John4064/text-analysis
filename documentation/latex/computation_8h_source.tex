@@ -1,0 +1,39 @@
+\hypertarget{computation_8h_source}{}\doxysection{computation.\+h}
+\label{computation_8h_source}\index{D:/Workspace/C++/textanal/source/computation.h@{D:/Workspace/C++/textanal/source/computation.h}}
+\mbox{\hyperlink{computation_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{computation_8h_source_l00001}00001 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{computation_8h_source_l00002}00002 \textcolor{comment}{// Created by jpark on 1/3/2022.}}
+\DoxyCodeLine{\Hypertarget{computation_8h_source_l00003}00003 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{computation_8h_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{computation_8h_source_l00005}00005 \textcolor{preprocessor}{\#ifndef TEXTANAL\_COMPUTATION\_H}}
+\DoxyCodeLine{\Hypertarget{computation_8h_source_l00006}00006 \textcolor{preprocessor}{\#define TEXTANAL\_COMPUTATION\_H}}
+\DoxyCodeLine{\Hypertarget{computation_8h_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{computation_8h_source_l00008}00008 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{\Hypertarget{computation_8h_source_l00009}00009 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\Hypertarget{computation_8h_source_l00010}00010 \textcolor{preprocessor}{\#include <pthread.h>}}
+\DoxyCodeLine{\Hypertarget{computation_8h_source_l00011}00011 \textcolor{preprocessor}{\#include <thread>}}
+\DoxyCodeLine{\Hypertarget{computation_8h_source_l00012}00012 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{computation_8h_source_l00013}00013 \textcolor{preprocessor}{\#include <mutex>}}
+\DoxyCodeLine{\Hypertarget{computation_8h_source_l00014}00014 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{\Hypertarget{computation_8h_source_l00015}00015 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{\Hypertarget{computation_8h_source_l00016}00016 \textcolor{preprocessor}{\#include <algorithm>}}
+\DoxyCodeLine{\Hypertarget{computation_8h_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{computation_8h_source_l00023}\mbox{\hyperlink{structinput_struct}{00023}} \textcolor{keyword}{struct }\mbox{\hyperlink{structinput_struct}{inputStruct}}\{}
+\DoxyCodeLine{\Hypertarget{computation_8h_source_l00024}\mbox{\hyperlink{structinput_struct_a3beba543fd731201918d74f9b73eb4c7}{00024}}     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structinput_struct_a3beba543fd731201918d74f9b73eb4c7}{index}}, \mbox{\hyperlink{structinput_struct_a0c3b126d88aaaf6022bd79ff1b2e0571}{numOfThread}};}
+\DoxyCodeLine{\Hypertarget{computation_8h_source_l00025}\mbox{\hyperlink{structinput_struct_aac3a1f5aff222596f07055008d78e3d5}{00025}}     std::vector<std::string>* \mbox{\hyperlink{structinput_struct_aac3a1f5aff222596f07055008d78e3d5}{bookP}};}
+\DoxyCodeLine{\Hypertarget{computation_8h_source_l00026}00026     \textcolor{comment}{//std::vector<std::pair <std::string,int>>* wordFreq;}}
+\DoxyCodeLine{\Hypertarget{computation_8h_source_l00027}\mbox{\hyperlink{structinput_struct_a4309761d09651cdb3a9eca565fedb6ff}{00027}}     std::map<std::string,int>* \mbox{\hyperlink{structinput_struct_a4309761d09651cdb3a9eca565fedb6ff}{wordMap}};}
+\DoxyCodeLine{\Hypertarget{computation_8h_source_l00028}00028 \};}
+\DoxyCodeLine{\Hypertarget{computation_8h_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{computation_8h_source_l00036}00036 std::string \mbox{\hyperlink{computation_8h_a8359a6898a6473f8c89883ff06ae594c}{removeChar}}(std::string str, \textcolor{keywordtype}{char} bad);}
+\DoxyCodeLine{\Hypertarget{computation_8h_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{computation_8h_source_l00042}00042 \textcolor{keywordtype}{void} \mbox{\hyperlink{computation_8h_a67a061c371089bcef7f62fadb64a617f}{processText}}(std::vector<std::string>bookVec,\textcolor{keywordtype}{int} numOfThread);}
+\DoxyCodeLine{\Hypertarget{computation_8h_source_l00043}00043 }
+\DoxyCodeLine{\Hypertarget{computation_8h_source_l00050}00050 \textcolor{keywordtype}{void} *\mbox{\hyperlink{computation_8h_a4a86a029374fce8e1aa81aee05fe93af}{task}}(\textcolor{keywordtype}{void} *threadid);}
+\DoxyCodeLine{\Hypertarget{computation_8h_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{computation_8h_source_l00052}00052 \textcolor{keywordtype}{void} \mbox{\hyperlink{computation_8h_a88c5e84050e98e318d2539f5c7b1bf65}{outputReport}}(std::map<std::string,int> wordM);}
+\DoxyCodeLine{\Hypertarget{computation_8h_source_l00058}00058 std::string \mbox{\hyperlink{computation_8h_ad324fbb406da32fcc50a64874ae4f0db}{cleanup}}(std::string inWord);}
+\DoxyCodeLine{\Hypertarget{computation_8h_source_l00059}00059 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//TEXTANAL\_COMPUTATION\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,112 @@
+\hypertarget{computation_8cpp_source}{}\doxysection{computation.\+cpp}
+\label{computation_8cpp_source}\index{D:/Workspace/C++/textanal/source/computation.cpp@{D:/Workspace/C++/textanal/source/computation.cpp}}
+\mbox{\hyperlink{computation_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00001}00001 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00002}00002 \textcolor{comment}{// Created by john Parkhurst on 1/3/2022.}}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00003}00003 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00006}00006 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{computation_8h}{computation.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00007}00007 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{statistics_8h}{statistics.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00009}00009 \textcolor{comment}{//The Mutex for writing to our wordMap}}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00010}\mbox{\hyperlink{computation_8cpp_a7d0ef4e6d3dec82a1b88293ff1c9b171}{00010}} std::mutex \mbox{\hyperlink{computation_8cpp_a7d0ef4e6d3dec82a1b88293ff1c9b171}{freqMtx}};}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00012}\mbox{\hyperlink{computation_8cpp_a67a061c371089bcef7f62fadb64a617f}{00012}} \textcolor{keywordtype}{void} \mbox{\hyperlink{computation_8cpp_a67a061c371089bcef7f62fadb64a617f}{processText}}(std::vector<std::string>bookVec,\textcolor{keywordtype}{int} numOfThread)\{}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00013}00013     pthread\_t threads[numOfThread];}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00014}00014     \textcolor{keywordtype}{int} rc;}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00015}00015     \textcolor{keyword}{struct }\mbox{\hyperlink{structinput_struct}{inputStruct}} thrStruct[\mbox{\hyperlink{structinput_struct_a0c3b126d88aaaf6022bd79ff1b2e0571}{numOfThread}}];}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00016}00016     \textcolor{comment}{//WordM is our word Frequency Map}}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00017}00017     \textcolor{keyword}{auto} wordM = \textcolor{keyword}{new} std::map<std::string,int>;}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00018}00018     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{structinput_struct_a0c3b126d88aaaf6022bd79ff1b2e0571}{numOfThread}}; i++ ) \{}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00019}00019         \textcolor{comment}{//Filling the input struct with the values desired(see struct for details)}}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00020}00020         thrStruct[i].\mbox{\hyperlink{structinput_struct_a3beba543fd731201918d74f9b73eb4c7}{index}} = i;}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00021}00021         thrStruct[i].\mbox{\hyperlink{structinput_struct_a0c3b126d88aaaf6022bd79ff1b2e0571}{numOfThread}} = \mbox{\hyperlink{structinput_struct_a0c3b126d88aaaf6022bd79ff1b2e0571}{numOfThread}};}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00022}00022         thrStruct[i].\mbox{\hyperlink{structinput_struct_a4309761d09651cdb3a9eca565fedb6ff}{wordMap}} = wordM;}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00023}00023         thrStruct[i].\mbox{\hyperlink{structinput_struct_aac3a1f5aff222596f07055008d78e3d5}{bookP}} = \&bookVec;}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00024}00024         rc = pthread\_create(\&threads[i], \textcolor{keyword}{nullptr}, \mbox{\hyperlink{computation_8cpp_a84978d36842b41447f6d2278fe61931a}{task}}, \&thrStruct[i]);}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00025}00025         \textcolor{keywordflow}{if} (rc) \{}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00026}00026             std::cout << \textcolor{stringliteral}{"{}Error:unable to create thread,"{}} << rc << std::endl;}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00027}00027             exit(-\/1);}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00028}00028         \}}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00029}00029         \textcolor{comment}{//This function below waits for the thread to exit before it continues}}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00030}00030         pthread\_join(threads[i], \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00031}00031     \}}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00032}00032     \textcolor{comment}{//This exits the main threads}}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00033}00033     \textcolor{comment}{//pthread\_exit(nullptr);}}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00034}00034     \textcolor{comment}{//After all the threads are complete we have wordM}}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00035}00035     \mbox{\hyperlink{statistics_8cpp_ab3d02237194a559bd88612469731a9bc}{collectStats}}(*wordM, bookVec);}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00036}00036     \textcolor{comment}{//outputReport(*wordM);}}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00037}00037     \textcolor{keyword}{delete} wordM;}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00038}00038 \}}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00039}00039 }
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00040}\mbox{\hyperlink{computation_8cpp_ad324fbb406da32fcc50a64874ae4f0db}{00040}} std::string \mbox{\hyperlink{computation_8cpp_ad324fbb406da32fcc50a64874ae4f0db}{cleanup}}(std::string inWord)\{}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00041}00041     inWord=\mbox{\hyperlink{computation_8cpp_a8359a6898a6473f8c89883ff06ae594c}{removeChar}}(inWord,\textcolor{charliteral}{'.'});}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00042}00042     inWord=\mbox{\hyperlink{computation_8cpp_a8359a6898a6473f8c89883ff06ae594c}{removeChar}}(inWord,\textcolor{charliteral}{','});}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00043}00043     inWord=\mbox{\hyperlink{computation_8cpp_a8359a6898a6473f8c89883ff06ae594c}{removeChar}}(inWord,\textcolor{charliteral}{'"{}'});}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00044}00044     inWord=\mbox{\hyperlink{computation_8cpp_a8359a6898a6473f8c89883ff06ae594c}{removeChar}}(inWord,\textcolor{charliteral}{'?'});}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00045}00045     inWord=\mbox{\hyperlink{computation_8cpp_a8359a6898a6473f8c89883ff06ae594c}{removeChar}}(inWord,\textcolor{charliteral}{';'});}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00046}00046     inWord=\mbox{\hyperlink{computation_8cpp_a8359a6898a6473f8c89883ff06ae594c}{removeChar}}(inWord,\textcolor{charliteral}{'!'});}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00047}00047     inWord=\mbox{\hyperlink{computation_8cpp_a8359a6898a6473f8c89883ff06ae594c}{removeChar}}(inWord,\textcolor{charliteral}{'('});}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00048}00048     inWord=\mbox{\hyperlink{computation_8cpp_a8359a6898a6473f8c89883ff06ae594c}{removeChar}}(inWord,\textcolor{charliteral}{')'});}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00049}00049     inWord=\mbox{\hyperlink{computation_8cpp_a8359a6898a6473f8c89883ff06ae594c}{removeChar}}(inWord,\textcolor{charliteral}{':'});}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00050}00050     \textcolor{comment}{//May remove numbers not sure.}}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00051}00051     \textcolor{keywordflow}{return} inWord;}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00052}00052 \}}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00053}00053 }
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00054}\mbox{\hyperlink{computation_8cpp_a84978d36842b41447f6d2278fe61931a}{00054}} \textcolor{keywordtype}{void} *\mbox{\hyperlink{computation_8cpp_a84978d36842b41447f6d2278fe61931a}{task}}(\textcolor{keywordtype}{void} *rec\_struct) \{}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00055}00055 }
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00056}00056     \textcolor{keyword}{auto} *struct\_ptr = (\textcolor{keyword}{struct }\mbox{\hyperlink{structinput_struct}{inputStruct}}*) rec\_struct;}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00057}00057     \textcolor{comment}{//How large the thread processes ex 4 threads of 100 lines do 25 each}}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00058}00058     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} size =struct\_ptr-\/>bookP-\/>size()/struct\_ptr-\/>numOfThread;}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00059}00059     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} ind = struct\_ptr-\/>index;}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00060}00060     \textcolor{comment}{//The start index of the pages to analyze}}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00061}00061     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} startInd = size*ind;}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00062}00062     \textcolor{comment}{//The vector the book is stored in \& and word frequency map}}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00063}00063     std::vector<std::string> bookVec = *struct\_ptr-\/>bookP;}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00064}00064     std::map<std::string, int>* wordL = struct\_ptr-\/>wordMap;}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00065}00065     \textcolor{comment}{//Iterate through our subsection!}}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00066}00066     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i =startInd; i < startInd+size; i++)\{}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00067}00067         \textcolor{comment}{//We split each string by space then put into vector based on frequency}}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00068}00068         \textcolor{comment}{//This is the string stream of our line}}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00069}00069         std::stringstream ss(bookVec[i]);}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00070}00070         \textcolor{comment}{//Each individual word}}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00071}00071         std::string inWord;}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00072}00072         \textcolor{keywordflow}{while} (ss>> inWord) \{}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00073}00073             \textcolor{comment}{//Preprocess inWord For punctuation}}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00074}00074             inWord=\mbox{\hyperlink{computation_8cpp_ad324fbb406da32fcc50a64874ae4f0db}{cleanup}}(inWord);}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00075}00075             \textcolor{keywordflow}{if}(inWord.empty())\{}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00076}00076                 \textcolor{comment}{//Skips just empty}}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00077}00077                 \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00078}00078             \}}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00079}00079             \textcolor{comment}{//Determine if it is in vector}}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00080}00080             \mbox{\hyperlink{computation_8cpp_a7d0ef4e6d3dec82a1b88293ff1c9b171}{freqMtx}}.lock();}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00081}00081             std::map<std::string, int>::iterator it = wordL-\/>find(inWord);}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00082}00082             \textcolor{keywordflow}{if}(it != wordL-\/>end()) \{}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00083}00083                 \textcolor{comment}{//Update}}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00084}00084                 it-\/>second = it-\/>second+1;}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00085}00085             \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00086}00086                 \textcolor{comment}{//Doesnt Exist so insert into map}}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00087}00087                 wordL-\/>insert(std::make\_pair(inWord,1));}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00088}00088             \}}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00089}00089             \mbox{\hyperlink{computation_8cpp_a7d0ef4e6d3dec82a1b88293ff1c9b171}{freqMtx}}.unlock();}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00090}00090         \}}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00091}00091     \}}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00092}00092     pthread\_exit(\textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00093}00093     \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00094}00094 \}}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00095}00095 }
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00096}\mbox{\hyperlink{computation_8cpp_a8359a6898a6473f8c89883ff06ae594c}{00096}} std::string \mbox{\hyperlink{computation_8cpp_a8359a6898a6473f8c89883ff06ae594c}{removeChar}}(std::string str, \textcolor{keywordtype}{char} bad)\{}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00097}00097     str.erase(remove(str.begin(),str.end(),bad),str.end());}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00098}00098     \textcolor{keywordflow}{return} str;}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00099}00099 \}}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00100}00100 }
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00101}\mbox{\hyperlink{computation_8cpp_a88c5e84050e98e318d2539f5c7b1bf65}{00101}} \textcolor{keywordtype}{void} \mbox{\hyperlink{computation_8cpp_a88c5e84050e98e318d2539f5c7b1bf65}{outputReport}}(std::map<std::string,int> wordM)\{}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00102}00102     std::cout << \textcolor{stringliteral}{"{}THIS MAP IS FOR MAIN THREAD: "{}}<< std::endl;}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00103}00103     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& [key, value] : wordM) \{}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00104}00104         std::cout << key << \textcolor{stringliteral}{"{} : "{}} << value << std::endl;}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00105}00105     \}}
+\DoxyCodeLine{\Hypertarget{computation_8cpp_source_l00106}00106 \}}
+
+\end{DoxyCode}

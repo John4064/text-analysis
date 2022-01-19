@@ -1,0 +1,49 @@
+\hypertarget{main_8cpp_source}{}\doxysection{main.\+cpp}
+\label{main_8cpp_source}\index{D:/Workspace/C++/textanal/source/main.cpp@{D:/Workspace/C++/textanal/source/main.cpp}}
+\mbox{\hyperlink{main_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00003}00003 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00004}00004 \textcolor{preprocessor}{\#include <regex>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00005}00005 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00006}00006 \textcolor{preprocessor}{\#include <chrono>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00007}00007 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{filep_8h}{filep.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00008}00008 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{computation_8h}{computation.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00010}00010 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00011}\mbox{\hyperlink{main_8cpp_ab3d212598126796d2283724c49629c2a}{00011}} \textcolor{preprocessor}{\#define numThread 4}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00014}\mbox{\hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{00014}} \textcolor{keywordtype}{int} \mbox{\hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}}(\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char} *argv[]) \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00015}00015     \textcolor{comment}{//Correct amt of arguments}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00016}00016     \textcolor{keywordflow}{if} (argc != 2) \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00017}00017         std::cout << (\textcolor{stringliteral}{"{}error: missing command line arguments\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00018}00018         exit(41);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00019}00019     \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00020}00020     \textcolor{comment}{//Check that argv[1] contains text file}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00021}00021     \textcolor{keywordflow}{if} (!regex\_search (argv[1], std::regex(\textcolor{stringliteral}{"{}.txt\$"{}}) ))\{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00022}00022         std::cout << argv[1] << \textcolor{stringliteral}{"{} has an Invalid Filetype Must be txt File\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00023}00023         exit(42);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00024}00024     \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00025}00025     \textcolor{comment}{//Input Handling}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00026}00026 \textcolor{preprocessor}{    \#if multithread}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00027}00027         std::cout << \textcolor{stringliteral}{"{}This Version is multithreaded \(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00028}00028         exit(59);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00029}00029 \textcolor{preprocessor}{    \#endif}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00030}00030     std::cout << \textcolor{stringliteral}{"{}Processing File As we Speak!\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00031}00031     \textcolor{comment}{//The beginning Step you may say! It opens and reads the book}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00032}00032     std::vector<std::string> bookVec =\mbox{\hyperlink{filep_8cpp_a80bf77b120452f9a3689848f854ae3a7}{processFil}}(argv[1]);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00033}00033     \textcolor{comment}{//Here we gather the Statistics}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00034}00034     \textcolor{keyword}{auto} start = std::chrono::high\_resolution\_clock::now();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00035}00035 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00036}00036     \mbox{\hyperlink{computation_8cpp_a67a061c371089bcef7f62fadb64a617f}{processText}}(bookVec,\mbox{\hyperlink{main_8cpp_ab3d212598126796d2283724c49629c2a}{numThread}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00038}00038     \textcolor{keyword}{auto} stop = std::chrono::high\_resolution\_clock::now();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00039}00039     \textcolor{keyword}{auto} duration = std::chrono::duration\_cast<std::chrono::microseconds>(stop -\/ start);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00040}00040     \textcolor{comment}{//In the report we output  Thread \# and time efficiency}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00041}00041     std::cout << \textcolor{stringliteral}{"{}The Execution Time for "{}}<<\mbox{\hyperlink{main_8cpp_ab3d212598126796d2283724c49629c2a}{numThread}}<<\textcolor{stringliteral}{"{} threads was "{}}<< duration.count()*.000001 << \textcolor{stringliteral}{"{} Seconds"{}}<<std::endl;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00042}00042     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00043}00043 \}}
+
+\end{DoxyCode}

@@ -1,0 +1,63 @@
+.TH "D:/Workspace/C++/textanal/source/statistics.cpp" 3 "Wed Jan 19 2022" "Version .3" "Text Analysis" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+D:/Workspace/C++/textanal/source/statistics.cpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'statistics\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBcollectStats\fP (std::map< std::string, int > wordM, std::vector< std::string >bookVec)"
+.br
+.RI "This function primarily is where we go and call all specific statistics such as Collocation,Concordance,classification Will must likely call an output function itself which then in turn redirects all output to logs/report\&. "
+.ti -1c
+.RI "void \fBwordFrequency\fP (std::map< std::string, int > wordM, int size)"
+.br
+.RI "Just output a ranking of top size words(10,20,30) "
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void collectStats (std::map< std::string, int > wordM, std::vector< std::string > bookVec)"
+
+.PP
+This function primarily is where we go and call all specific statistics such as Collocation,Concordance,classification Will must likely call an output function itself which then in turn redirects all output to logs/report\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIwordM\fP The word map that contains all the words in the file and their frequency 
+.br
+\fIbookVec\fP The book itself saved as a vector\&. Could be used for collocation later down the line 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Nothing at the moment 
+.RE
+.PP
+
+.PP
+Definition at line \fB8\fP of file \fBstatistics\&.cpp\fP\&.
+.SS "void wordFrequency (std::map< std::string, int > wordM, int size)"
+
+.PP
+Just output a ranking of top size words(10,20,30) NOTE TO SELF COULD REFACTOR THIS IN FUTURE TO ACCOUNT FOR MULTI INPUT, like most frequent phrase and word 
+.PP
+\fBParameters\fP
+.RS 4
+\fIwordM\fP The word map that contains all the words in the file and their frequency 
+.br
+\fIsize\fP determines how many words we display(top 10,25,50) 
+.RE
+.PP
+
+.PP
+Definition at line \fB13\fP of file \fBstatistics\&.cpp\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Text Analysis from the source code\&.

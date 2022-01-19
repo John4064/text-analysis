@@ -1,0 +1,65 @@
+.TH "D:/Workspace/C++/textanal/source/algorithms.h" 3 "Wed Jan 19 2022" "Version .3" "Text Analysis" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+D:/Workspace/C++/textanal/source/algorithms.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <map>\fP
+.br
+\fC#include <string>\fP
+.br
+\fC#include <iostream>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBswap\fP (std::pair< std::string, int > *target, std::pair< std::string, int > *dest)"
+.br
+.RI "A simple swap function can be modified easily for different dataStructures\&. "
+.ti -1c
+.RI "std::map< std::string, int > \fBselectSort\fP (std::map< std::string, int > unsortMap)"
+.br
+.RI "Standard Selection Sort\&. "
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "std::map< std::string, int > selectSort (std::map< std::string, int > unsortMap)"
+
+.PP
+Standard Selection Sort\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIunsortMap\fP Is a map that we will sort based on value\&. Used in Word Frequency 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The map now Sorted! 
+.RE
+.PP
+
+.PP
+Definition at line \fB13\fP of file \fBalgorithms\&.cpp\fP\&.
+.SS "void swap (std::pair< std::string, int > * target, std::pair< std::string, int > * dest)"
+
+.PP
+A simple swap function can be modified easily for different dataStructures\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fItarget\fP The first pair we are swapping with the second(dest) 
+.br
+\fIdest\fP the second pair we are swapping with the first(target) 
+.RE
+.PP
+
+.PP
+Definition at line \fB8\fP of file \fBalgorithms\&.cpp\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Text Analysis from the source code\&.

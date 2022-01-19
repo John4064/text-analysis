@@ -1,0 +1,73 @@
+\hypertarget{filep_8h}{}\doxysection{D\+:/\+Workspace/\+C++/textanal/source/filep.h File Reference}
+\label{filep_8h}\index{D:/Workspace/C++/textanal/source/filep.h@{D:/Workspace/C++/textanal/source/filep.h}}
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{filep_8h_a10eed43fdea87b118ff4c05db9db8079}{inputloc}}~\char`\"{}../inputs/\char`\"{}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{filep_8h_acebac6817dd6574124400868ebc1c342}{string\+Conc}} (const char $\ast$filename)
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{filep_8h_a80bf77b120452f9a3689848f854ae3a7}{process\+Fil}} (const char $\ast$argv)
+\begin{DoxyCompactList}\small\item\em \+: We open and read the File \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{filep_8h_a10eed43fdea87b118ff4c05db9db8079}\label{filep_8h_a10eed43fdea87b118ff4c05db9db8079}} 
+\index{filep.h@{filep.h}!inputloc@{inputloc}}
+\index{inputloc@{inputloc}!filep.h@{filep.h}}
+\doxysubsubsection{\texorpdfstring{inputloc}{inputloc}}
+{\footnotesize\ttfamily \#define inputloc~\char`\"{}../inputs/\char`\"{}}
+
+
+
+Definition at line \mbox{\hyperlink{filep_8h_source_l00008}{8}} of file \mbox{\hyperlink{filep_8h_source}{filep.\+h}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{filep_8h_a80bf77b120452f9a3689848f854ae3a7}\label{filep_8h_a80bf77b120452f9a3689848f854ae3a7}} 
+\index{filep.h@{filep.h}!processFil@{processFil}}
+\index{processFil@{processFil}!filep.h@{filep.h}}
+\doxysubsubsection{\texorpdfstring{processFil()}{processFil()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ process\+Fil (\begin{DoxyParamCaption}\item[{const char $\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+\+: We open and read the File 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & The File name argument we recieved from CLI \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: Nothing 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{filep_8cpp_source_l00016}{16}} of file \mbox{\hyperlink{filep_8cpp_source}{filep.\+cpp}}.
+
+\mbox{\Hypertarget{filep_8h_acebac6817dd6574124400868ebc1c342}\label{filep_8h_acebac6817dd6574124400868ebc1c342}} 
+\index{filep.h@{filep.h}!stringConc@{stringConc}}
+\index{stringConc@{stringConc}!filep.h@{filep.h}}
+\doxysubsubsection{\texorpdfstring{stringConc()}{stringConc()}}
+{\footnotesize\ttfamily std\+::string string\+Conc (\begin{DoxyParamCaption}\item[{const char $\ast$}]{filename }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & filename is the file name(must be in inputs folder! \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: Returns a string of file name 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{filep_8cpp_source_l00007}{7}} of file \mbox{\hyperlink{filep_8cpp_source}{filep.\+cpp}}.
+
