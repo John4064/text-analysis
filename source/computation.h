@@ -26,7 +26,8 @@
 struct inputStruct{
     unsigned int index, numOfThread;
     std::vector<std::string>* bookP;
-    std::vector<std::pair <std::string,int>>* wordFreq;
+    //std::vector<std::pair <std::string,int>>* wordFreq;
+    std::map<std::string,int>* wordMap;
 };
 
 /**

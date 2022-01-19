@@ -13,13 +13,15 @@ void gatherStat(std::vector<std::string>bookVec,int numOfThread){
     struct inputStruct thrStruct[numOfThread];
     //std::vector<std::pair<std::string, int>*> foo;
 
-    auto wordL = new std::vector<std::pair <std::string,int>>;
+    //auto wordL = new std::vector<std::pair <std::string,int>>;
+    auto wordM = new std::map<std::string,int>;
     for(unsigned int i = 0; i < numOfThread; i++ ) {
         //FIlling the inputstruct with the values
         thrStruct[i].index = i;
         thrStruct[i].numOfThread = numOfThread;
 
-        thrStruct[i].wordFreq = wordL;
+        //thrStruct[i].wordFreq = wordL;
+        thrStruct[i].wordMap = wordM;
         thrStruct[i].bookP = &bookVec;
         rc = pthread_create(&threads[i], NULL, task, &thrStruct[i]);
         if (rc) {
@@ -36,10 +38,10 @@ void gatherStat(std::vector<std::string>bookVec,int numOfThread){
     //    std::cout << i << ' ';
     //Print thru our map to check
     std::cout << "THIS Vector IS FOR MAIN THREAD: "<< std::endl;
-    for (const auto [key, value] : *wordL) {
+    for (const auto [key, value] : *wordM) {
         std::cout << key << " : " << value << std::endl;
     }
-    delete wordL;
+    delete wordM;
 }
 
 std::string cleanup(std::string inWord){
@@ -66,8 +68,8 @@ void *task(void *rec_struct) {
     unsigned int startInd = size*ind;
     std::vector<std::string> bookVec = *struct_ptr->bookP;
     //The output vector here
-    std::vector<std::pair <std::string,int>>* wordL = struct_ptr->wordFreq;
-    //std::map<std::string, int>* mymap = struct_ptr->wordL;
+    //std::vector<std::pair <std::string,int>>* wordL = struct_ptr->wordFreq;
+    std::map<std::string, int>* wordL = struct_ptr->wordMap;
     //Iterate through our subsection!
     for(int i =startInd; i < startInd+size; i++){
         //We split each string by space then put into vector based on frequency
@@ -78,21 +80,20 @@ void *task(void *rec_struct) {
         while (ss>> inWord) {
             //Preprocess inword For punctuation
             inWord=cleanup(inWord);
-            wordL->push_back(std::make_pair(inWord,1));
-            /*
             if(inWord.empty()){
-                //Skips just empty periods
+                //Skips just empty
                 continue;
             }
-            std::map<std::string, int>::iterator it = mymap->find(inWord);
-            if(it != mymap->end()) {
+            //Determine if it is in vector
+            std::map<std::string, int>::iterator it = wordL->find(inWord);
+            if(it != wordL->end()) {
                 //Update
                 it->second = it->second+1;
             }else{
                 //Doesnt Exist so insert into map
-                mymap->insert(std::make_pair(inWord,1));
+                wordL->insert(std::make_pair(inWord,1));
             }
-             */
+
         }
     }
     //Without this print it goes roughly .009 seconds for 4 threads
