@@ -6,9 +6,10 @@
 			[
 				{
 					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
 					"minimumCMakeVersion" : 
 					{
-						"string" : "3.20"
+						"string" : "3.14"
 					},
 					"projectIndex" : 0,
 					"source" : ".",
@@ -38,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "textanal::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-textanal-Debug-cc39605d2b7cf15ab2a0.json",
+					"jsonFile" : "target-textanal-Debug-af0de1f3cddf17196ef8.json",
 					"name" : "textanal",
 					"projectIndex" : 0
 				}
@@ -48,12 +49,12 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/Users/john4064/Desktop/Workspace/C++/text-analysis/cmake-build-debug",
-		"source" : "/Users/john4064/Desktop/Workspace/C++/text-analysis"
+		"build" : "D:/Workspace/C++/textanal/cmake-build-debug",
+		"source" : "D:/Workspace/C++/textanal"
 	},
 	"version" : 
 	{
 		"major" : 2,
-		"minor" : 2
+		"minor" : 3
 	}
 }

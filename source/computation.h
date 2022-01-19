@@ -15,10 +15,16 @@
 #include <sstream>
 #include <algorithm>
 
+/** @var index is an integer that tells you which thread in order it is
+ * @var numOfThread lets it know how many threads are there
+ * @var bookP is the pointer to the saved book we are analyzing
+ * @var wordFreq is a pointer to the vector we are saving our word frequency too
+ */
 struct inputStruct{
     unsigned int index, numOfThread;
-    std::map<std::string, int> *test;
     std::vector<std::string>* bookP;
+    //std::vector<std::pair <std::string,int>>* wordFreq;
+    std::map<std::string,int>* wordMap;
 };
 
 /**
