@@ -12,14 +12,15 @@ void gatherStat(std::vector<std::string>bookVec,int numOfThread){
     int rc;
     struct inputStruct thrStruct[numOfThread];
     //std::vector<std::pair<std::string, int>*> foo;
-    int d = 5;
+
+    auto wordL = new std::vector<std::pair <std::string,int>>;
     for(unsigned int i = 0; i < numOfThread; i++ ) {
         //FIlling the inputstruct with the values
         thrStruct[i].index = i;
         thrStruct[i].numOfThread = numOfThread;
-        //thrStruct[i].wordL = foo;
+
+        thrStruct[i].wordFreq = wordL;
         thrStruct[i].bookP = &bookVec;
-        thrStruct[i].funtime = &d;
         rc = pthread_create(&threads[i], NULL, task, &thrStruct[i]);
         if (rc) {
             std::cout << "Error:unable to create thread," << rc << std::endl;
@@ -30,8 +31,15 @@ void gatherStat(std::vector<std::string>bookVec,int numOfThread){
     }
     //This exists the main threads
     //pthread_exit(nullptr);
-    std::cout << d << std::endl;
-    return;
+    //dead code*****
+    //for (auto i: *wordL)
+    //    std::cout << i << ' ';
+    //Print thru our map to check
+    std::cout << "THIS Vector IS FOR MAIN THREAD: "<< std::endl;
+    for (const auto [key, value] : *wordL) {
+        std::cout << key << " : " << value << std::endl;
+    }
+    delete wordL;
 }
 
 std::string cleanup(std::string inWord){
@@ -60,7 +68,8 @@ void *task(void *rec_struct) {
     //Example how to modify with a basic int
     int* test = struct_ptr->funtime;
     *test+=1;
-
+    std::vector<std::pair <std::string,int>>* wordL = struct_ptr->wordFreq;
+    wordL->push_back(std::make_pair("ABC",5));
     //std::map<std::string, int>* mymap = struct_ptr->wordL;
     //Iterate through our subsection!
     for(int i =startInd; i < startInd+size; i++){
@@ -91,13 +100,10 @@ void *task(void *rec_struct) {
     }
     //Made It here
     std::cout << *test<<'\n';
-    /*
-    //Print thru our map to check
-    std::cout << "THIS MAP IS FOR THREAD: "<< ind << std::endl;
-    for (const auto [key, value] : mymap) {
-        std::cout << key << " : " << value << std::endl;
-    }
-     */
+
+
+
+
     //Without this print it goes roughly .009 seconds for 4 threads
 
     pthread_exit(nullptr);
