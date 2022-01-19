@@ -15,9 +15,6 @@
 #include <sstream>
 #include <algorithm>
 
-//extern std::vector<std::pair<std::string, int>*> wordL;
-//extern std::vector<std::string>* wordL;
-
 /** @var index is an integer that tells you which thread in order it is
  * @var numOfThread lets it know how many threads are there
  * @var bookP is the pointer to the saved book we are analyzing

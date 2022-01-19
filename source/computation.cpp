@@ -5,22 +5,19 @@
 
 #include "computation.h"
 
-
+//The Mutex for writing to our wordMap
+std::mutex freqMtx;
 
 void gatherStat(std::vector<std::string>bookVec,int numOfThread){
     pthread_t threads[numOfThread];
     int rc;
     struct inputStruct thrStruct[numOfThread];
-    //std::vector<std::pair<std::string, int>*> foo;
-
-    //auto wordL = new std::vector<std::pair <std::string,int>>;
+    //WordM is our word Frequency Map
     auto wordM = new std::map<std::string,int>;
     for(unsigned int i = 0; i < numOfThread; i++ ) {
-        //FIlling the inputstruct with the values
+        //FIlling the input struct with the values desired(see struct for details)
         thrStruct[i].index = i;
         thrStruct[i].numOfThread = numOfThread;
-
-        //thrStruct[i].wordFreq = wordL;
         thrStruct[i].wordMap = wordM;
         thrStruct[i].bookP = &bookVec;
         rc = pthread_create(&threads[i], NULL, task, &thrStruct[i]);
@@ -29,18 +26,15 @@ void gatherStat(std::vector<std::string>bookVec,int numOfThread){
             exit(-1);
         }
         //This function below waits for the thread to exit before it continues
-        pthread_join(threads[i], NULL);
+        pthread_join(threads[i], nullptr);
     }
-    //This exists the main threads
+    //This exits the main threads
     //pthread_exit(nullptr);
-    //dead code*****
-    //for (auto i: *wordL)
-    //    std::cout << i << ' ';
-    //Print thru our map to check
-    std::cout << "THIS Vector IS FOR MAIN THREAD: "<< std::endl;
-    for (const auto [key, value] : *wordM) {
+    std::cout << "THIS MAP IS FOR MAIN THREAD: "<< std::endl;
+    for (const auto& [key, value] : *wordM) {
         std::cout << key << " : " << value << std::endl;
     }
+    //After all the threads are complete we have wordM
     delete wordM;
 }
 
@@ -66,9 +60,8 @@ void *task(void *rec_struct) {
     unsigned int ind = struct_ptr->index;
     //The start index of the pages to analyze
     unsigned int startInd = size*ind;
+    //The vector the book is stored in & and word frequency map
     std::vector<std::string> bookVec = *struct_ptr->bookP;
-    //The output vector here
-    //std::vector<std::pair <std::string,int>>* wordL = struct_ptr->wordFreq;
     std::map<std::string, int>* wordL = struct_ptr->wordMap;
     //Iterate through our subsection!
     for(int i =startInd; i < startInd+size; i++){
@@ -85,6 +78,7 @@ void *task(void *rec_struct) {
                 continue;
             }
             //Determine if it is in vector
+            freqMtx.lock();
             std::map<std::string, int>::iterator it = wordL->find(inWord);
             if(it != wordL->end()) {
                 //Update
@@ -93,11 +87,9 @@ void *task(void *rec_struct) {
                 //Doesnt Exist so insert into map
                 wordL->insert(std::make_pair(inWord,1));
             }
-
+            freqMtx.unlock();
         }
     }
-    //Without this print it goes roughly .009 seconds for 4 threads
-
     pthread_exit(nullptr);
     return nullptr;
 }
