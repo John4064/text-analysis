@@ -21,7 +21,7 @@ void swap(std::pair<std::string, int>* target, std::pair<std::string, int>* dest
  * @brief Standard Selection Sort
  * @return The map now Sorted!
  */
-std::map<std::string,int> selectSort(std::map<std::string,int> unsortMap);
+void selectSort(std::map<std::string,int> unsortMap);
 
 
 #endif //TEXTANAL_ALGORITHMS_H

@@ -16,6 +16,7 @@ void wordFrequency(std::map<std::string,int> wordM, int size){
         exit(393);
     }
     std::cout << "FREQUENCY"<< std::endl;
+    wordM=selectSort(*wordM);
     for( auto i: wordM){
     //for(int i = 0; i <5; i++){
         std::cout << i.first << " " << i.second << "\n";

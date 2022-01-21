@@ -10,7 +10,8 @@ void swap(std::pair<std::string, int>* target, std::pair<std::string, int>* dest
 
 }
 
-std::map<std::string,int> selectSort(std::map<std::string,int> unsortMap){
+void selectSort(std::map<std::string,int>& unsortMap){
 
-    return unsortMap;
+    // Iterate over the map using c++11 range based for loop
+    std::cout <<5;
 }

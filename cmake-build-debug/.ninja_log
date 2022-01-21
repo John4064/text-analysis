@@ -26,3 +26,12 @@
 2	936	6643338634315320	CMakeFiles/textanal.dir/source/computation.cpp.obj	510c3a141c5f6f7e
 11	2662	6643338651495564	CMakeFiles/textanal.dir/source/main.cpp.obj	c2c2535e81d83074
 2662	4282	6643338667726866	textanal.exe	5861819e9984c87e
+44	589	6643353691812854	CMakeFiles/textanal.dir/source/algorithms.cpp.obj	7295b6a4ed7c9edb
+13	629	6643353692219573	CMakeFiles/textanal.dir/source/statistics.cpp.obj	9d68f93523fb74c4
+630	2532	6643353711187302	textanal.exe	5861819e9984c87e
+3	364	6643358187587080	CMakeFiles/textanal.dir/source/algorithms.cpp.obj	7295b6a4ed7c9edb
+365	1851	6643358202397647	textanal.exe	5861819e9984c87e
+3	582	6643366507799978	CMakeFiles/textanal.dir/source/algorithms.cpp.obj	7295b6a4ed7c9edb
+3	964	6643366836826477	CMakeFiles/textanal.dir/source/algorithms.cpp.obj	7295b6a4ed7c9edb
+32	731	6643367296340663	CMakeFiles/textanal.dir/source/algorithms.cpp.obj	7295b6a4ed7c9edb
+5	1107	6643367300132141	CMakeFiles/textanal.dir/source/computation.cpp.obj	510c3a141c5f6f7e
