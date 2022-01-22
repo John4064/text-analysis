@@ -23,7 +23,7 @@ jobs:
         cd ${{ github.workspace }}
         mkdir build
         cd build
-        g++ -std=c++17 ../Source/main.cpp ../Source/filep.cpp ../Source/computation.cpp -pthread -o main
+        g++ -std=c++17 ../Source/main.cpp ../Source/filep.cpp ../Source/computation.cpp  ../Source/statistics.cpp  ../Source/algorithms.cpp -pthread -o main
     #Run the executable with default input
     - name: Execute Solution
       run: |
