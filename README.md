@@ -1,13 +1,4 @@
 <div id="top"></div>
-<!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Don't forget to give the project a star!
-*** Thanks again! Now go create something AMAZING! :D
--->
-
-
 
 <!-- PROJECT SHIELDS -->
 <!--
@@ -133,6 +124,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 ## Roadmap
 
 - [] Basic Functionality
+    - [] Optimize any potential algorithms(search/sort)
 - [] Documentation
     - [X] Readme
     - [] Doxygen
@@ -142,6 +134,12 @@ _For more examples, please refer to the [Documentation](https://example.com)_
     - [] Word Count/Frequency
     - [] Sentiment Analysis
     - [] General Stats
+- [] Automation
+    - [] Ability to send multiple files for analysis(Batch Order)
+    - [] Ability to analyze same file multiple configurations(single vs multi threading)
+- [] Future
+    - [] Analyze different file types
+    - [] Analysis of none books such as tweets/articles
 
 See the [open issues](https://github.com/John4064/text-analysis/issues) for a full list of proposed features (and known issues).
 
