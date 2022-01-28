@@ -51,31 +51,31 @@ build cmake_object_order_depends_target_textanal: phony || CMakeFiles/textanal.d
 
 build CMakeFiles/textanal.dir/source/main.cpp.obj: CXX_COMPILER__textanal_Debug D$:/Workspace/C++/textanal/source/main.cpp || cmake_object_order_depends_target_textanal
   DEP_FILE = CMakeFiles\textanal.dir\source\main.cpp.obj.d
-  FLAGS = -g -std=gnu++11
+  FLAGS = -g -std=gnu++17
   OBJECT_DIR = CMakeFiles\textanal.dir
   OBJECT_FILE_DIR = CMakeFiles\textanal.dir\source
 
 build CMakeFiles/textanal.dir/source/filep.cpp.obj: CXX_COMPILER__textanal_Debug D$:/Workspace/C++/textanal/source/filep.cpp || cmake_object_order_depends_target_textanal
   DEP_FILE = CMakeFiles\textanal.dir\source\filep.cpp.obj.d
-  FLAGS = -g -std=gnu++11
+  FLAGS = -g -std=gnu++17
   OBJECT_DIR = CMakeFiles\textanal.dir
   OBJECT_FILE_DIR = CMakeFiles\textanal.dir\source
 
 build CMakeFiles/textanal.dir/source/computation.cpp.obj: CXX_COMPILER__textanal_Debug D$:/Workspace/C++/textanal/source/computation.cpp || cmake_object_order_depends_target_textanal
   DEP_FILE = CMakeFiles\textanal.dir\source\computation.cpp.obj.d
-  FLAGS = -g -std=gnu++11
+  FLAGS = -g -std=gnu++17
   OBJECT_DIR = CMakeFiles\textanal.dir
   OBJECT_FILE_DIR = CMakeFiles\textanal.dir\source
 
 build CMakeFiles/textanal.dir/source/statistics.cpp.obj: CXX_COMPILER__textanal_Debug D$:/Workspace/C++/textanal/source/statistics.cpp || cmake_object_order_depends_target_textanal
   DEP_FILE = CMakeFiles\textanal.dir\source\statistics.cpp.obj.d
-  FLAGS = -g -std=gnu++11
+  FLAGS = -g -std=gnu++17
   OBJECT_DIR = CMakeFiles\textanal.dir
   OBJECT_FILE_DIR = CMakeFiles\textanal.dir\source
 
 build CMakeFiles/textanal.dir/source/algorithms.cpp.obj: CXX_COMPILER__textanal_Debug D$:/Workspace/C++/textanal/source/algorithms.cpp || cmake_object_order_depends_target_textanal
   DEP_FILE = CMakeFiles\textanal.dir\source\algorithms.cpp.obj.d
-  FLAGS = -g -std=gnu++11
+  FLAGS = -g -std=gnu++17
   OBJECT_DIR = CMakeFiles\textanal.dir
   OBJECT_FILE_DIR = CMakeFiles\textanal.dir\source
 
