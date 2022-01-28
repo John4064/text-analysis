@@ -1,0 +1,129 @@
+\hypertarget{computation_8h}{}\doxysection{D\+:/\+Workspace/\+C++/textanal/source/computation.h File Reference}
+\label{computation_8h}\index{D:/Workspace/C++/textanal/source/computation.h@{D:/Workspace/C++/textanal/source/computation.h}}
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$pthread.\+h$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$mutex$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structinput_struct}{input\+Struct}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{computation_8h_a8359a6898a6473f8c89883ff06ae594c}{remove\+Char}} (std\+::string str, char bad)
+\begin{DoxyCompactList}\small\item\em Function to remove all occurrences of a char from the string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{computation_8h_a67a061c371089bcef7f62fadb64a617f}{process\+Text}} (std\+::vector$<$ std\+::string $>$book\+Vec, int num\+Of\+Thread)
+\begin{DoxyCompactList}\small\item\em \+: This is the \char`\"{}main function\char`\"{} creates all the other threads based on the number given \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{computation_8h_a4a86a029374fce8e1aa81aee05fe93af}{task}} (void $\ast$threadid)
+\begin{DoxyCompactList}\small\item\em The brains behind the application\+: Iterates through its subsection of book depending on \#threads, And from there it itemizes each element in the book into a map. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{computation_8h_a88c5e84050e98e318d2539f5c7b1bf65}{output\+Report}} (std\+::map$<$ std\+::string, int $>$ wordM)
+\item 
+std\+::string \mbox{\hyperlink{computation_8h_ad324fbb406da32fcc50a64874ae4f0db}{cleanup}} (std\+::string in\+Word)
+\begin{DoxyCompactList}\small\item\em just a garbage cleanup method that removes punctuation and other stuff from the word \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{computation_8h_ad324fbb406da32fcc50a64874ae4f0db}\label{computation_8h_ad324fbb406da32fcc50a64874ae4f0db}} 
+\index{computation.h@{computation.h}!cleanup@{cleanup}}
+\index{cleanup@{cleanup}!computation.h@{computation.h}}
+\doxysubsubsection{\texorpdfstring{cleanup()}{cleanup()}}
+{\footnotesize\ttfamily std\+::string cleanup (\begin{DoxyParamCaption}\item[{std\+::string}]{in\+Word }\end{DoxyParamCaption})}
+
+
+
+just a garbage cleanup method that removes punctuation and other stuff from the word 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in\+Word} & is a string we want to clean up \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The modified stream 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{computation_8cpp_source_l00040}{40}} of file \mbox{\hyperlink{computation_8cpp_source}{computation.\+cpp}}.
+
+\mbox{\Hypertarget{computation_8h_a88c5e84050e98e318d2539f5c7b1bf65}\label{computation_8h_a88c5e84050e98e318d2539f5c7b1bf65}} 
+\index{computation.h@{computation.h}!outputReport@{outputReport}}
+\index{outputReport@{outputReport}!computation.h@{computation.h}}
+\doxysubsubsection{\texorpdfstring{outputReport()}{outputReport()}}
+{\footnotesize\ttfamily void output\+Report (\begin{DoxyParamCaption}\item[{std\+::map$<$ std\+::string, int $>$}]{wordM }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{computation_8cpp_source_l00101}{101}} of file \mbox{\hyperlink{computation_8cpp_source}{computation.\+cpp}}.
+
+\mbox{\Hypertarget{computation_8h_a67a061c371089bcef7f62fadb64a617f}\label{computation_8h_a67a061c371089bcef7f62fadb64a617f}} 
+\index{computation.h@{computation.h}!processText@{processText}}
+\index{processText@{processText}!computation.h@{computation.h}}
+\doxysubsubsection{\texorpdfstring{processText()}{processText()}}
+{\footnotesize\ttfamily void process\+Text (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::string $>$}]{book\+Vec,  }\item[{int}]{num\+Of\+Thread }\end{DoxyParamCaption})}
+
+
+
+\+: This is the \char`\"{}main function\char`\"{} creates all the other threads based on the number given 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & The book saved as a vector of strings, num\+Thread is the number of threads to be created \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{computation_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{computation_8cpp_source}{computation.\+cpp}}.
+
+\mbox{\Hypertarget{computation_8h_a8359a6898a6473f8c89883ff06ae594c}\label{computation_8h_a8359a6898a6473f8c89883ff06ae594c}} 
+\index{computation.h@{computation.h}!removeChar@{removeChar}}
+\index{removeChar@{removeChar}!computation.h@{computation.h}}
+\doxysubsubsection{\texorpdfstring{removeChar()}{removeChar()}}
+{\footnotesize\ttfamily std\+::string remove\+Char (\begin{DoxyParamCaption}\item[{std\+::string}]{str,  }\item[{char}]{bad }\end{DoxyParamCaption})}
+
+
+
+Function to remove all occurrences of a char from the string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & This is the string we are modifying \\
+\hline
+{\em bad} & is the character we would like the remove \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the Modified string 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{computation_8cpp_source_l00096}{96}} of file \mbox{\hyperlink{computation_8cpp_source}{computation.\+cpp}}.
+
+\mbox{\Hypertarget{computation_8h_a4a86a029374fce8e1aa81aee05fe93af}\label{computation_8h_a4a86a029374fce8e1aa81aee05fe93af}} 
+\index{computation.h@{computation.h}!task@{task}}
+\index{task@{task}!computation.h@{computation.h}}
+\doxysubsubsection{\texorpdfstring{task()}{task()}}
+{\footnotesize\ttfamily void $\ast$ task (\begin{DoxyParamCaption}\item[{void $\ast$}]{threadid }\end{DoxyParamCaption})}
+
+
+
+The brains behind the application\+: Iterates through its subsection of book depending on \#threads, And from there it itemizes each element in the book into a map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em threadid} & This is the \mbox{\hyperlink{structinput_struct}{input\+Struct}} above it contains index of thread, numofthreads that exist and the book \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{computation_8cpp_source_l00054}{54}} of file \mbox{\hyperlink{computation_8cpp_source}{computation.\+cpp}}.
+
