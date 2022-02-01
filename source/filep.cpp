@@ -28,6 +28,9 @@ std::string cleanup(std::string inWord) {
     inWord = removeChar(inWord, ')');
     inWord = removeChar(inWord, ':');
     //May remove numbers not sure.
+
+    //Convert to all lowercase: .02 to .03 with 25 values printed runtime ideal
+    transform (inWord.begin(), inWord.end(), inWord.begin(), ::tolower);
     return inWord;
 }
 
