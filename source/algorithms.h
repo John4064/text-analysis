@@ -27,7 +27,7 @@ bool swapVal(const std::pair<std::string, int> &target,const std::pair<std::stri
  * @brief Standard Selection Sort
  * @return The map now Sorted!
  */
-std::vector<std::pair<std::string,int>> sortByVal(std::map<std::string,int>& unsortMap, unsigned int size);
+std::vector<std::pair<std::string,int>> sortByVal(std::map<std::string,int>& unsortMap);
 
 
 #endif //TEXTANAL_ALGORITHMS_H

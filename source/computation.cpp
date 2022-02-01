@@ -36,21 +36,6 @@ void processText(std::vector<std::string>bookVec,int numOfThread){
     //outputReport(*wordM);
     delete wordM;
 }
-
-std::string cleanup(std::string inWord){
-    inWord=removeChar(inWord,'.');
-    inWord=removeChar(inWord,',');
-    inWord=removeChar(inWord,'"');
-    inWord=removeChar(inWord,'?');
-    inWord=removeChar(inWord,';');
-    inWord=removeChar(inWord,'!');
-    inWord=removeChar(inWord,'(');
-    inWord=removeChar(inWord,')');
-    inWord=removeChar(inWord,':');
-    //May remove numbers not sure.
-    return inWord;
-}
-
 void *task(void *rec_struct) {
 
     auto *struct_ptr = (struct inputStruct*) rec_struct;
@@ -71,7 +56,6 @@ void *task(void *rec_struct) {
         std::string inWord;
         while (ss>> inWord) {
             //Preprocess inWord For punctuation
-            inWord=cleanup(inWord);
             if(inWord.empty()){
                 //Skips just empty
                 continue;
@@ -92,12 +76,6 @@ void *task(void *rec_struct) {
     pthread_exit(nullptr);
     return nullptr;
 }
-
-std::string removeChar(std::string str, char bad){
-    str.erase(remove(str.begin(),str.end(),bad),str.end());
-    return str;
-}
-
 void outputReport(std::map<std::string,int> wordM){
     std::cout << "THIS MAP IS FOR MAIN THREAD: "<< std::endl;
     for (const auto& [key, value] : wordM) {

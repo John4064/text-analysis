@@ -6,14 +6,10 @@
 
 
 bool swapVal(const std::pair<std::string, int> &target,const std::pair<std::string, int> &dest){
-    return (target.second < dest.second);
+    return (target.second > dest.second);
 }
 
-std::vector<std::pair<std::string,int>> sortByVal(std::map<std::string,int>& unSortedMap, unsigned int size){
-    //Makes sure it is the right size
-    if (size>unSortedMap.size()){
-        size = unSortedMap.size();
-    }
+std::vector<std::pair<std::string,int>> sortByVal(std::map<std::string,int>& unSortedMap){
     //Create Empty Vector
     std::vector<std::pair<std::string,int>> valVector;
     // Iterate over the map copying the key-value pairs over to the vector
@@ -23,6 +19,8 @@ std::vector<std::pair<std::string,int>> sortByVal(std::map<std::string,int>& unS
         valVector.emplace_back(it2->first, it2->second);
     }
 
-    sort(valVector.begin(), valVector.end(), sortByVal);
+    sort(valVector.begin(), valVector.end(), swapVal);
+
+
     return valVector;
 }
