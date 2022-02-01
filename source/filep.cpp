@@ -12,6 +12,24 @@ std::string stringConc(const char* filename){
     //open file
     return fileString;
 }
+std::string removeChar(std::string str, char bad){
+    str.erase(remove(str.begin(),str.end(),bad),str.end());
+    return str;
+}
+//Test
+std::string cleanup(std::string inWord) {
+    inWord = removeChar(inWord, '.');
+    inWord = removeChar(inWord, ',');
+    inWord = removeChar(inWord, '"');
+    inWord = removeChar(inWord, '?');
+    inWord = removeChar(inWord, ';');
+    inWord = removeChar(inWord, '!');
+    inWord = removeChar(inWord, '(');
+    inWord = removeChar(inWord, ')');
+    inWord = removeChar(inWord, ':');
+    //May remove numbers not sure.
+    return inWord;
+}
 
 std::vector<std::string> processFil(const char* argv){
 
@@ -19,11 +37,15 @@ std::vector<std::string> processFil(const char* argv){
     std::string filName = stringConc(argv);
     //Read the File
     std::ifstream fil(filName);
-    //fil.open(filName, std::ofstream::in);
     std::string buffer;
     std::vector<std::string> bookVec;
     if(fil.is_open()){
         while (getline (fil, buffer)) {
+            buffer = cleanup(buffer);
+            //Checks buffer isnt empty!
+            if(buffer.empty()){
+                continue;
+            }
             // Output the text from the file
             bookVec.push_back(buffer);
         }

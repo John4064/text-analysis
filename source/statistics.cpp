@@ -17,14 +17,11 @@ void wordFrequency(std::map<std::string,int> wordM, int size){
     }
     std::cout << "FREQUENCY"<< std::endl;
     //Code Breaking Line here
-    selectSort(wordM, wordM.size());
-
-
-    for( auto i: wordM){
-    //for(int i = 0; i <5; i++){
-        if(i.first == "you" || i.first == "Earth"){
-            //should be 7 and 96
-            std::cout << i.first << ":" << i.second << "\n";
-        }
+    std::vector<std::pair<std::string,int>> mostOccur= sortByVal(wordM);
+    std::cout <<"The Size of Vector is: "<< mostOccur.size()<< std::endl;
+    std::cout << "The map, sorted by value is: " << std::endl;
+    for(int i = 0; i <25; i++)
+    {
+        std::cout << mostOccur[i].first << ": " << mostOccur[i].second << std::endl;
     }
 }
