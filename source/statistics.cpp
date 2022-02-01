@@ -17,8 +17,8 @@ void wordFrequency(std::map<std::string,int> wordM, int size){
     }
     std::cout << "FREQUENCY"<< std::endl;
     //Code Breaking Line here
-    selectSort(wordM, wordM.size());
-
+    std::vector<std::pair<std::string,int>> mostOccur= sortByVal(wordM, wordM.size());
+    std::cout <<"The Size of Vector is: "<< mostOccur.size()<< std::endl;
 
     for( auto i: wordM){
     //for(int i = 0; i <5; i++){
