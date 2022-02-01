@@ -6,7 +6,10 @@
 
 
 void collectStats(std::map<std::string,int> wordM,std::vector<std::string>bookVec){
-    wordFrequency(wordM,10);
+    wordFrequency(wordM,100);
+    //Could display as top 15 most common words, percentage it appears compared to all words
+    //Could group certain words like colors
+    //Remove determiners
     //std::cout << 5;
 }
 
@@ -20,7 +23,7 @@ void wordFrequency(std::map<std::string,int> wordM, int size){
     std::vector<std::pair<std::string,int>> mostOccur= sortByVal(wordM);
     std::cout <<"The Size of Vector is: "<< mostOccur.size()<< std::endl;
     std::cout << "The map, sorted by value is: " << std::endl;
-    for(int i = 0; i <25; i++)
+    for(int i = 0; i <size; i++)
     {
         std::cout << mostOccur[i].first << ": " << mostOccur[i].second << std::endl;
     }
