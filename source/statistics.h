@@ -27,4 +27,9 @@ void collectStats(std::map<std::string,int> wordM, std::vector<std::string>bookV
  * @brief Just output a ranking of top size words(10,20,30)
  */
 void wordFrequency(std::map<std::string,int> wordM, int size);
+
+/***
+ * @param bookVec: All the sentences of the book put into a vector
+ */
+void sentSimilairty(std::vector<std::string>bookVec);
 #endif //TEXTANAL_STATISTICS_H

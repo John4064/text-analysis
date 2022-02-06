@@ -28,3 +28,7 @@ void wordFrequency(std::map<std::string,int> wordM, int size){
         std::cout << mostOccur[i].first << ": " << mostOccur[i].second << std::endl;
     }
 }
+
+void sentSimilairty(std::vector<std::string>bookVec){
+
+}
