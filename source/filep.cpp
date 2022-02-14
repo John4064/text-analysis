@@ -12,22 +12,18 @@ std::string stringConc(const char* filename){
     //open file
     return fileString;
 }
-std::string removeChar(std::string str, char bad){
-    str.erase(remove(str.begin(),str.end(),bad),str.end());
-    return str;
-}
+
+bool invalidChar (char c) 
+{  
+	//Checks if characters are A-Z, a-z, "-", " ' " or space
+	//The characters above are the allowed characters
+    return !((c>=65 && c <=90) || (c>=97 && c <=122) || (c>=48 && c <=57) || c == 45 || c == 39 || c == 32); 
+} 
+
 //Test
 std::string cleanup(std::string inWord) {
-    inWord = removeChar(inWord, '.');
-    inWord = removeChar(inWord, ',');
-    inWord = removeChar(inWord, '"');
-    inWord = removeChar(inWord, '?');
-    inWord = removeChar(inWord, ';');
-    inWord = removeChar(inWord, '!');
-    inWord = removeChar(inWord, '(');
-    inWord = removeChar(inWord, ')');
-    inWord = removeChar(inWord, ':');
-    //May remove numbers not sure.
+	//Remove all characters according to the invalidChar function above
+	inWord.erase(remove_if(inWord.begin(),inWord.end(),invalidChar),inWord.end());
 
     //Convert to all lowercase: .02 to .03 with 25 values printed runtime ideal
     transform (inWord.begin(), inWord.end(), inWord.begin(), ::tolower);

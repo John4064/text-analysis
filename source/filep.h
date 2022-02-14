@@ -19,12 +19,11 @@
 std::string stringConc(const char* filename);
 
 /**
- * @param str This is the string we are modifying
- * @param bad is the character we would like the remove
- * @brief  Function to remove all occurrences of a char from the string
- * @return the Modified string
+ * @param c This is the character which we are checking
+ * @brief  Checks if the input character is an allowed character or not
+ * @return 1 or 0 dependinf on if the character is allowed or not
  */
-std::string removeChar(std::string str, char bad);
+bool invalidChar(char c);
 
 /**
  * @param inWord is a string we want to clean up
