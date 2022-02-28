@@ -16,9 +16,7 @@ std::string stringConc(const char* filename){
 bool invalidChar (char c) 
 {  
 	//Checks if characters are A-Z, a-z, 0-9, "-", " ' " or space
-	//The characters above are the allowed characters
-
-	
+	//The characters above are the allowed characters	
 	
 	std::string inChar{c};
 	std::string  pattern = "[- 'a-zA-Z0-9]";
