@@ -10,6 +10,7 @@
 #include <string>
 #include <iostream>
 #include <algorithm>
+#include <vector>
 
 /**Depracated Dead Code
  * @param target The first pair we are swapping with the second(dest)
