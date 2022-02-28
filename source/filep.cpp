@@ -15,14 +15,12 @@ std::string stringConc(const char* filename){
 
 bool invalidChar (char c) 
 {  
-	//Checks if characters are A-Z, a-z, "-", " ' " or space
-	//The characters above are the allowed characters
-	
+	//Checks if characters are A-Z, a-z, 0-9, "-", " ' " or space
+	//The characters above are the allowed characters	
 	
 	std::string inChar{c};
 	std::string  pattern = "[- 'a-zA-Z0-9]";
 	return !(std::regex_match(inChar, std::regex(pattern)));
-    //return !((c>=65 && c <=90) || (c>=97 && c <=122) || (c>=48 && c <=57) || c == 45 || c == 39 || c == 32); 
 } 
 
 //Test
