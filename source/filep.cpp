@@ -37,7 +37,6 @@ std::vector<std::string> processFil(const char* argv){
 
     //Open the File specified
     std::string filName = stringConc(argv);
-	std::cout << filName << std::endl;
     //Read the File
     std::ifstream fil(filName);
     std::string buffer;
