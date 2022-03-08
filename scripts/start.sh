@@ -1,4 +1,4 @@
 #John Parkhurst
 echo "Start:"
-g++ ../source/main.cpp ../source/computation.cpp ../source/filep.cpp -o test
-./test
+g++ -std=c++17 ../Source/main.cpp ../Source/filep.cpp ../Source/computation.cpp  ../Source/statistics.cpp  ../Source/algorithms.cpp -pthread -o test
+./test ../inputs/sun.txt
