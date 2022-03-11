@@ -1,0 +1,9 @@
+#ifndef TEXTANAL_LOGGING_H
+#define TEXTANAL_LOGGING_H
+
+
+
+
+
+
+#endif //TEXTANAL_FILEP_H

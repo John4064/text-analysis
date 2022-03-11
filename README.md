@@ -131,7 +131,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 - [] Automation
     - [] Ability to send multiple files for analysis(Batch Order)
     - [] Ability to analyze same file multiple configurations(single vs multi threading)
-- [] Future
+- [] Futures
     - [] Analyze different file types
     - [] Analysis of none books such as tweets/articles
 

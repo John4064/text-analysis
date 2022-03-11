@@ -13,7 +13,7 @@ void collectStats(std::map<std::string,int> wordM,std::vector<std::string>bookVe
 void wordFrequency(std::map<std::string,int> wordM, int size){
     if(size>wordM.size() || size<0){
         //Error in parameters size > size of map or -size
-        exit(393);
+        exit(393); 
     }
     std::cout << "FREQUENCY"<< std::endl;
     //Code Breaking Line here
