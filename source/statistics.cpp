@@ -15,13 +15,12 @@ void wordFrequency(std::map<std::string,int> wordM, int size){
         //Error in parameters size > size of map or -size
         exit(393); 
     }
-    std::cout << "FREQUENCY"<< std::endl;
-    //Code Breaking Line here
     std::vector<std::pair<std::string,int>> mostOccur= sortByVal(wordM);
-    std::cout <<"The Size of Vector is: "<< mostOccur.size()<< std::endl;
-    std::cout << "The map, sorted by value is: " << std::endl;
-    for(int i = 0; i <25; i++)
+    /*
+    std::cout << "Most Frequently Occured Words: " << std::endl;
+    for(int i = 0; i <size; i++)
     {
         std::cout << mostOccur[i].first << ": " << mostOccur[i].second << std::endl;
     }
+    */
 }
