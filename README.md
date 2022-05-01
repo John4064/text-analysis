@@ -125,7 +125,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 - [] User Interface
     - [] Interactibility with the application without programming selecting files
 - [] Report
-    - [] Word Count/Frequency
+    - [x] Word Count/Frequency
     - [] Sentiment Analysis
     - [] General Stats
 - [] Automation
