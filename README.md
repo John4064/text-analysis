@@ -69,7 +69,11 @@
 <a href="https://app.alpaca.markets/dashboard/overview">
     <!--<img src="images/examples/portfolio.png" alt="Logo" width="600" height="400"> -->
   </a>
-<p>Version one the application will take in a text file that is supplied in the inputs folder, from there it will execute the algorithm to scan and process the textfile using multithreading and output to an output folder as well as efficiency statistics. With the change in the number of threads you can get statistics on the efficiency of # of threads</p>
+<p>Version one the application will take in a text file that is supplied in the inputs folder, from there it will execute the algorithm to scan and process the textfile using multithreading and output to an output folder as well as efficiency statistics. With the change in the number of threads you can get statistics on the efficiency of # of threads.
+https://machinelearningmastery.com/gentle-introduction-bag-words-model/
+  Model to implement
+
+</p>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
