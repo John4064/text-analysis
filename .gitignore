@@ -1,5 +1,7 @@
 # Prerequisites
 *.d
+#Mac os
+.DS_store
 
 # Compiled Object files
 *.slo
@@ -84,3 +86,12 @@ cmake-build-debug/.cmake/api/v1/reply/target-textanal-Debug-af0de1f3cddf17196ef8
 cmake-build-debug/.ninja_deps
 cmake-build-debug/.ninja_log
 cmake-build-debug/build.ninja
+inputs/WARS.txt
+cmake-build-debug/
+cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-dcbd9fe703770f7ae6bf.json
+cmake-build-debug/.cmake/api/v1/reply/directory-.-Debug-d0094a50bb2071803777.json
+cmake-build-debug/.cmake/api/v1/reply/toolchains-v1-8f8cb6be9d9a9806f691.json
+cmake-build-debug/.ninja_deps
+cmake-build-debug/.ninja_log
+cmake-build-debug/build.ninja
+cmake-build-debug/textanal
